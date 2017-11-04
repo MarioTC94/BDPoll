@@ -101,5 +101,15 @@
   <ItemGroup>
     <None Include="Resources\if_lock_477138.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{2ffcb770-9722-4c6d-b8e1-f73ed63017f4}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{13895a6e-f1ae-49a4-9876-a8d159660adb}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
