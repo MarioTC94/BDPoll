@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using MetroFramework;
 
-namespace View
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
+namespace View {
+    public partial class Main : MetroForm {
+
+        public Main() {
             InitializeComponent();
         }
     }
