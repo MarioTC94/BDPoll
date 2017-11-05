@@ -30,11 +30,11 @@
         {
             this.LB_Usuario = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.LB_Contraseña = new MetroFramework.Controls.MetroLabel();
-            this.Txt_Usuario = new MetroFramework.Controls.MetroTextBox();
-            this.Txt_Contraseña = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Txt_Contraseña = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Txt_Usuario = new MetroFramework.Controls.MetroTextBox();
+            this.LB_Contraseña = new MetroFramework.Controls.MetroLabel();
             this.Btn_Registrarse = new MetroFramework.Controls.MetroButton();
             this.Btn_IniciaSesion = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
@@ -70,49 +70,15 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // LB_Contraseña
+            // pictureBox2
             // 
-            this.LB_Contraseña.AutoSize = true;
-            this.LB_Contraseña.Location = new System.Drawing.Point(91, 188);
-            this.LB_Contraseña.Name = "LB_Contraseña";
-            this.LB_Contraseña.Size = new System.Drawing.Size(75, 19);
-            this.LB_Contraseña.TabIndex = 2;
-            this.LB_Contraseña.Text = "Contraseña";
-            this.LB_Contraseña.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // Txt_Usuario
-            // 
-            // 
-            // 
-            // 
-            this.Txt_Usuario.CustomButton.Image = null;
-            this.Txt_Usuario.CustomButton.Location = new System.Drawing.Point(245, 1);
-            this.Txt_Usuario.CustomButton.Name = "";
-            this.Txt_Usuario.CustomButton.Size = new System.Drawing.Size(33, 33);
-            this.Txt_Usuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Txt_Usuario.CustomButton.TabIndex = 1;
-            this.Txt_Usuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Txt_Usuario.CustomButton.UseSelectable = true;
-            this.Txt_Usuario.CustomButton.Visible = false;
-            this.Txt_Usuario.Lines = new string[0];
-            this.Txt_Usuario.Location = new System.Drawing.Point(12, 15);
-            this.Txt_Usuario.MaxLength = 32767;
-            this.Txt_Usuario.Name = "Txt_Usuario";
-            this.Txt_Usuario.PasswordChar = '\0';
-            this.Txt_Usuario.PromptText = "Usuario o Contraseña..";
-            this.Txt_Usuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Txt_Usuario.SelectedText = "";
-            this.Txt_Usuario.SelectionLength = 0;
-            this.Txt_Usuario.SelectionStart = 0;
-            this.Txt_Usuario.ShortcutsEnabled = true;
-            this.Txt_Usuario.Size = new System.Drawing.Size(279, 35);
-            this.Txt_Usuario.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Txt_Usuario.TabIndex = 2;
-            this.Txt_Usuario.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.Txt_Usuario.UseSelectable = true;
-            this.Txt_Usuario.WaterMark = "Usuario o Contraseña..";
-            this.Txt_Usuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.Txt_Usuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.pictureBox2.Image = global::View.Properties.Resources.if_lock_477138;
+            this.pictureBox2.Location = new System.Drawing.Point(257, 88);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // Txt_Contraseña
             // 
@@ -148,16 +114,6 @@
             this.Txt_Contraseña.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Txt_Contraseña.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::View.Properties.Resources.if_lock_477138;
-            this.pictureBox2.Location = new System.Drawing.Point(257, 88);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::View.Properties.Resources.if_user_173122__1_;
@@ -168,6 +124,50 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // Txt_Usuario
+            // 
+            // 
+            // 
+            // 
+            this.Txt_Usuario.CustomButton.Image = null;
+            this.Txt_Usuario.CustomButton.Location = new System.Drawing.Point(245, 1);
+            this.Txt_Usuario.CustomButton.Name = "";
+            this.Txt_Usuario.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.Txt_Usuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Txt_Usuario.CustomButton.TabIndex = 1;
+            this.Txt_Usuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Txt_Usuario.CustomButton.UseSelectable = true;
+            this.Txt_Usuario.CustomButton.Visible = false;
+            this.Txt_Usuario.Lines = new string[0];
+            this.Txt_Usuario.Location = new System.Drawing.Point(12, 15);
+            this.Txt_Usuario.MaxLength = 32767;
+            this.Txt_Usuario.Name = "Txt_Usuario";
+            this.Txt_Usuario.PasswordChar = '\0';
+            this.Txt_Usuario.PromptText = "Usuario o Contraseña..";
+            this.Txt_Usuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Txt_Usuario.SelectedText = "";
+            this.Txt_Usuario.SelectionLength = 0;
+            this.Txt_Usuario.SelectionStart = 0;
+            this.Txt_Usuario.ShortcutsEnabled = true;
+            this.Txt_Usuario.Size = new System.Drawing.Size(279, 35);
+            this.Txt_Usuario.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Txt_Usuario.TabIndex = 2;
+            this.Txt_Usuario.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Txt_Usuario.UseSelectable = true;
+            this.Txt_Usuario.WaterMark = "Usuario o Contraseña..";
+            this.Txt_Usuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.Txt_Usuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // LB_Contraseña
+            // 
+            this.LB_Contraseña.AutoSize = true;
+            this.LB_Contraseña.Location = new System.Drawing.Point(91, 188);
+            this.LB_Contraseña.Name = "LB_Contraseña";
+            this.LB_Contraseña.Size = new System.Drawing.Size(75, 19);
+            this.LB_Contraseña.TabIndex = 2;
+            this.LB_Contraseña.Text = "Contraseña";
+            this.LB_Contraseña.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // Btn_Registrarse
             // 
             this.Btn_Registrarse.Location = new System.Drawing.Point(412, 254);
@@ -177,6 +177,7 @@
             this.Btn_Registrarse.Text = "Registrarse";
             this.Btn_Registrarse.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Btn_Registrarse.UseSelectable = true;
+            this.Btn_Registrarse.Click += new System.EventHandler(this.Btn_Registrarse_Click);
             // 
             // Btn_IniciaSesion
             // 

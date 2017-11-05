@@ -40,7 +40,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="City.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Cuestionario.cs" />
+    <Compile Include="Detalle.cs" />
+    <Compile Include="Direccion.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="Facturacion.cs" />
+    <Compile Include="Genero.cs" />
+    <Compile Include="Opciones.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="PersonaExtranjera.cs" />
+    <Compile Include="PersonaNacional.cs" />
+    <Compile Include="Pregunta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RespuestaMultiple.cs" />
+    <Compile Include="RespuestaSelecUnica.cs" />
+    <Compile Include="RespuestaVerdaderoFalso.cs" />
+    <Compile Include="States.cs" />
+    <Compile Include="Telefono.cs" />
+    <Compile Include="TipoCuestionario.cs" />
+    <Compile Include="TipoDireccion.cs" />
+    <Compile Include="TipoEmail.cs" />
+    <Compile Include="TipoPersona.cs" />
+    <Compile Include="TipoPregunta.cs" />
+    <Compile Include="TipoTelefono.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

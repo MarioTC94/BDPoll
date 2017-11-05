@@ -17,11 +17,19 @@ namespace View {
 
         #region Eventos
         private void Btn_IniciaSesion_Click(object sender, EventArgs e) {
-            //ddfgdfgdfgdfgdfgdfgdfgdfdg
             this.DialogResult = DialogResult.OK;
-            //Sino
-            this.DialogResult = DialogResult.None;
+
         }
         #endregion
+
+        private void Btn_Registrarse_Click(object sender, EventArgs e) {
+            try {
+                if (new BusinessLogic.Prueba().OpenConnection()) {
+                    MetroFramework.MetroMessageBox.Show(this, "Conexión abierta correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            } catch (Exception ex) {
+                MetroFramework.MetroMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
