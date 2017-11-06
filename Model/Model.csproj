@@ -48,6 +48,7 @@
     <Compile Include="Email.cs" />
     <Compile Include="Facturacion.cs" />
     <Compile Include="Genero.cs" />
+    <Compile Include="FunctionModels\RegisterModel.cs" />
     <Compile Include="Opciones.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="PersonaExtranjera.cs" />

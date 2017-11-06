@@ -23,13 +23,13 @@ namespace View {
         #endregion
 
         private void Btn_Registrarse_Click(object sender, EventArgs e) {
-            try {
+           /* try {
                 if (new BusinessLogic.Prueba().OpenConnection()) {
                     MetroFramework.MetroMessageBox.Show(this, "Conexión abierta correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             } catch (Exception ex) {
                 MetroFramework.MetroMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
     }
 }

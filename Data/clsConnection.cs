@@ -41,21 +41,28 @@ namespace Data {
                 throw new Exception("No se puede cerrar la conexión con la base de datos", ex);
             }
         }
-        private bool CMD(SqlCommand oSQLC) {
-            try {
-                oSQLC.Connection = oCN;
-                if (OpenConnection()) {
-                    oSQLC.ExecuteNonQuery();
+
+        internal bool CMD(SqlCommand oSQLC) {
+            using (SqlTransaction tran = oCN.BeginTransaction()) {
+                try {
+                    oSQLC.Connection = oCN;
+                    if (OpenConnection()) {
+                        oSQLC.ExecuteNonQuery();
+                        tran.Commit();
+                        oCN.Close();
+                        return true;
+                    }
                     oCN.Close();
-                    return true;
-                }              
-                oCN.Close();
-                return false;
-            } catch (Exception ex) {
-                throw new Exception("No se pudo completar la solicitud", ex);
+                    return false;
+                } catch (Exception ex) {
+                    tran.Rollback();
+                    throw new Exception("No se pudo completar la solicitud", ex);
+
+                }
             }
         }
-        private DataTable SelectData(SqlCommand oSQLC) {
+
+        internal DataTable SelectData(SqlCommand oSQLC) {
             try {
                 oSQLC.Connection = oCN;
                 DataTable oDT = new DataTable();
@@ -70,7 +77,7 @@ namespace Data {
             }
         }
         
-        private SqlDataReader SelectUniqueData(SqlCommand oSQLC) {
+        internal SqlDataReader SelectUniqueData(SqlCommand oSQLC) {
             try {
                 oSQLC.Connection = oCN;
                 SqlDataReader OSQLR = null;
@@ -83,11 +90,11 @@ namespace Data {
                 CloseConnection();
                 return null;
             } catch (Exception ex) {
-                throw new Exception("No se pudo recuperar la información deseada");
+                throw new Exception("No se pudo recuperar la información deseada", ex);
             }
         }
         
-        private bool Exists(SqlCommand oSQLC) {
+        internal bool Exists(SqlCommand oSQLC) {
             try {
                 oSQLC.Connection = oCN;
                 SqlDataReader OSQLR = null;
@@ -98,7 +105,7 @@ namespace Data {
                 CloseConnection();
                 return Exists;
             } catch (Exception ex) {
-                throw new Exception("No se pudo recuperar la información deseada");
+                throw new Exception("No se pudo recuperar la información deseada", ex);
             }
         }
   

@@ -18,7 +18,7 @@ namespace View
             Application.SetCompatibleTextRenderingDefault(false);
             if (new Login().ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Main());
+                Application.Run(new Register());
             }
         }
     }

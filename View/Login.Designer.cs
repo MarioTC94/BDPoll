@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.LB_Usuario = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -98,7 +99,7 @@
             this.Txt_Contraseña.Location = new System.Drawing.Point(12, 81);
             this.Txt_Contraseña.MaxLength = 32767;
             this.Txt_Contraseña.Name = "Txt_Contraseña";
-            this.Txt_Contraseña.PasswordChar = '\0';
+            this.Txt_Contraseña.PasswordChar = '●';
             this.Txt_Contraseña.PromptText = "Digite su contraseña...";
             this.Txt_Contraseña.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Txt_Contraseña.SelectedText = "";
@@ -110,13 +111,14 @@
             this.Txt_Contraseña.TabIndex = 4;
             this.Txt_Contraseña.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Txt_Contraseña.UseSelectable = true;
+            this.Txt_Contraseña.UseSystemPasswordChar = true;
             this.Txt_Contraseña.WaterMark = "Digite su contraseña...";
             this.Txt_Contraseña.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Txt_Contraseña.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::View.Properties.Resources.if_user_173122__1_;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(259, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);

@@ -10,7 +10,7 @@ namespace Model{
         }
     
         public int IDTipoCuestionario { get; set; }
-        public string NombreTipoCustionario { get; set; }
+        public string DescripcionTipoCustionario { get; set; }
         public bool Activo { get; set; }
     
         public virtual ICollection<Cuestionario> Cuestionario { get; set; }

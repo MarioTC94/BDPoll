@@ -8,8 +8,6 @@ namespace Model{
         public Usuario(){
             this.Cuestionario = new HashSet<Cuestionario>();
         }
-    
-        public int IDEmail { get; set; }
         public string NombreUsuario { get; set; }
         public byte[] Contrasena { get; set; }
         public byte[] Salt { get; set; }

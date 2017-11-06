@@ -8,6 +8,7 @@ namespace Model{
         public int IDTelefono { get; set; }
         public string IDPersona { get; set; }
         public byte IDTipoTelefono { get; set; }
+        public string NumeroTelefono { get; set; }
         public bool Activo { get; set; }
     
         public virtual Persona Persona { get; set; }

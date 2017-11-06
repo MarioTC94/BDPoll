@@ -63,6 +63,16 @@ namespace View.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_lock_1991 {
+            get {
+                object obj = ResourceManager.GetObject("if_lock_1991", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_lock_477138 {
             get {
                 object obj = ResourceManager.GetObject("if_lock_477138", resourceCulture);
@@ -76,6 +86,16 @@ namespace View.Properties {
         internal static System.Drawing.Bitmap if_user_173122__1_ {
             get {
                 object obj = ResourceManager.GetObject("if_user_173122 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_User_green_85406 {
+            get {
+                object obj = ResourceManager.GetObject("if_User-green_85406", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
