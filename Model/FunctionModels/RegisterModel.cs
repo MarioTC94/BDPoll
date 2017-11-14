@@ -24,9 +24,9 @@ namespace Model.FunctionModels {
         public string NombreDireccion { get; set; }
         public byte IDTipoEmail { get; set; }
         public string NombreEmail { get; set; }
-        public int NombreUsuario { get; set; }
+        public string NombreUsuario { get; set; }
         public byte [] Contrasena { get; set; }
-        public byte [] Salt { get; set; }
+        public string Salt { get; set; }
 
     }
 }

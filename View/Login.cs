@@ -8,9 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace View {
 
     public partial class Login : MetroFramework.Forms.MetroForm {
+  
+        Register RG = new Register();
+
         public Login() {
             InitializeComponent();
         }
@@ -23,13 +28,20 @@ namespace View {
         #endregion
 
         private void Btn_Registrarse_Click(object sender, EventArgs e) {
-           /* try {
-                if (new BusinessLogic.Prueba().OpenConnection()) {
-                    MetroFramework.MetroMessageBox.Show(this, "Conexión abierta correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            } catch (Exception ex) {
-                MetroFramework.MetroMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            this.Hide();
+            RG.ShowDialog();
+            
+            
+            /* try {
+                 if (new BusinessLogic.Prueba().OpenConnection()) {
+                     MetroFramework.MetroMessageBox.Show(this, "Conexión abierta correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 }
+             } catch (Exception ex) {
+                 MetroFramework.MetroMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }*/
+
+
+           
         }
     }
 }

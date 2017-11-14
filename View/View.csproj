@@ -132,5 +132,8 @@
   <ItemGroup>
     <None Include="Resources\if_user_173122 %281%291.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_lock_19911.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

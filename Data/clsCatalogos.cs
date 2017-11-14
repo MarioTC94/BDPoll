@@ -15,7 +15,7 @@ namespace Data {
         }
 
         public DataTable getTipoDireccion() {
-            return new clsConnection().SelectData(new SqlCommand("SELECT a.IDTipoDireccion, a.DescripcionTipoTelefono, a.Activo FROM TipoDireccion a WHERE Activo = 1;"));
+            return new clsConnection().SelectData(new SqlCommand("SELECT a.IDTipoDireccion, a.DescripcionTipoDireccion, a.Activo FROM TipoDireccion a WHERE Activo = 1;"));
         }
 
         public DataTable getTipoEmail() {
@@ -38,12 +38,20 @@ namespace Data {
             return new clsConnection().SelectData(new SqlCommand("SELECT a.IDCountry, a.SortName, a.NameCountry, a.PhoneCode, a.Active FROM Country a WHERE Active = 1;"));
         }
 
-        public DataTable getState() {
-            return new clsConnection().SelectData(new SqlCommand("SELECT a.IDState, a.NameState, a.IDCountry, a.Active FROM State a WHERE Active = 1;"));
+        public DataTable getState(int IDCountry) {
+            SqlCommand oSQLC = new SqlCommand("SELECT a.IDState, a.NameState, a.IDCountry, a.Active FROM States a WHERE a.Active = 1 AND a.IDCountry = @IDCountry;");
+            oSQLC.Parameters.AddWithValue("@IDCountry", IDCountry);
+            return new clsConnection().SelectData(oSQLC);
         }
 
-        public DataTable getCity() {
-            return new clsConnection().SelectData(new SqlCommand("SELECT a.IDCity, a.NameCity, a.IDState, a.Active FROM City a WHERE Active = 1;"));
+        public DataTable getCity(int IDState) {
+            SqlCommand oSQLC = new SqlCommand("SELECT a.IDCity, a.NameCity, a.IDState, a.Active FROM City a WHERE a.Active = 1 AND a.IDState = @IDState");
+            oSQLC.Parameters.AddWithValue("@IDState", IDState);
+            return new clsConnection().SelectData(oSQLC);
+        }
+
+        public DataTable getGenero() {
+            return new clsConnection().SelectData(new SqlCommand("SELECT a.IDGenero, a.DescripcionGenero, a.Activo FROM Genero a WHERE Activo = 1;"));
         }
     }
 }

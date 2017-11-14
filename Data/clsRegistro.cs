@@ -18,7 +18,7 @@ namespace Data {
             if (oRegistro.IDTipoPersona == 1)
                 InfoPersona = "INSERT INTO PersonaNacional(IDPersonaNacional, IDGenero, Nombre, Apellido1, Apellido2, FechaNacimiento) VALUES(@IDPersona, @IDGenero, @Nombre, @Apellido1, @Apellido2, @FechaNacimiento);";
             else
-                InfoPersona = "INSERT INTO PersonaExtranjera(IDPersonaNacional, IDGenero, Nombre, Apellido1, FechaNacimiento) VALUES(@IDPersona, @IDGenero, @Nombre, @Apellido1, @FechaNacimiento);";
+                InfoPersona = "INSERT INTO PersonaExtranjera(IDPersonaExtranjera, IDGenero, Nombre, Apellido1, FechaNacimiento) VALUES(@IDPersona, @IDGenero, @Nombre, @Apellido1, @FechaNacimiento);";
 
             String Telefono = "INSERT INTO Telefono(IDPersona, IDTipoTelefono, NumeroTelefono) VALUES(@IDPersona, @IDTipoTelefono, @NumeroTelefono);";
             String Direccion = "INSERT INTO Direccion(IDPersona, IDTipoDireccion, IDCity, IDState, IDCountry, NombreDireccion) VALUES (@IDPersona, @IDTipoDireccion, IDCity, IDState, IDCountry, NombreDireccion);";

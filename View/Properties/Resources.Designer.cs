@@ -73,6 +73,16 @@ namespace View.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_lock_19911 {
+            get {
+                object obj = ResourceManager.GetObject("if_lock_19911", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_lock_477138 {
             get {
                 object obj = ResourceManager.GetObject("if_lock_477138", resourceCulture);

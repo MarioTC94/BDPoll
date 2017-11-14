@@ -56,11 +56,15 @@
             this.LB_Usuario = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Txt_Contraseña = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btn_Aceptar = new MetroFramework.Controls.MetroButton();
             this.Btn_Salir = new MetroFramework.Controls.MetroButton();
+            this.LB_TipoDireccion = new MetroFramework.Controls.MetroLabel();
+            this.CB_TipoDirecion = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,6 +182,7 @@
             this.Txt_Apellido1.SelectionStart = 0;
             this.Txt_Apellido1.ShortcutsEnabled = true;
             this.Txt_Apellido1.Size = new System.Drawing.Size(199, 23);
+            this.Txt_Apellido1.Style = MetroFramework.MetroColorStyle.Green;
             this.Txt_Apellido1.TabIndex = 5;
             this.Txt_Apellido1.UseSelectable = true;
             this.Txt_Apellido1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -217,6 +222,7 @@
             this.Txt_Apelldio2.SelectionStart = 0;
             this.Txt_Apelldio2.ShortcutsEnabled = true;
             this.Txt_Apelldio2.Size = new System.Drawing.Size(200, 23);
+            this.Txt_Apelldio2.Style = MetroFramework.MetroColorStyle.Green;
             this.Txt_Apelldio2.TabIndex = 7;
             this.Txt_Apelldio2.UseSelectable = true;
             this.Txt_Apelldio2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -325,7 +331,7 @@
             // LB_Telefono
             // 
             this.LB_Telefono.AutoSize = true;
-            this.LB_Telefono.Location = new System.Drawing.Point(510, 84);
+            this.LB_Telefono.Location = new System.Drawing.Point(496, 84);
             this.LB_Telefono.Name = "LB_Telefono";
             this.LB_Telefono.Size = new System.Drawing.Size(58, 19);
             this.LB_Telefono.TabIndex = 16;
@@ -337,7 +343,7 @@
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(178, 1);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(183, 1);
             this.metroTextBox2.CustomButton.Name = "";
             this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -346,7 +352,7 @@
             this.metroTextBox2.CustomButton.UseSelectable = true;
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(649, 84);
+            this.metroTextBox2.Location = new System.Drawing.Point(629, 84);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -355,7 +361,7 @@
             this.metroTextBox2.SelectionLength = 0;
             this.metroTextBox2.SelectionStart = 0;
             this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(200, 23);
+            this.metroTextBox2.Size = new System.Drawing.Size(205, 23);
             this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTextBox2.TabIndex = 17;
             this.metroTextBox2.UseSelectable = true;
@@ -365,7 +371,7 @@
             // LB_TipoTelefono
             // 
             this.LB_TipoTelefono.AutoSize = true;
-            this.LB_TipoTelefono.Location = new System.Drawing.Point(510, 136);
+            this.LB_TipoTelefono.Location = new System.Drawing.Point(495, 124);
             this.LB_TipoTelefono.Name = "LB_TipoTelefono";
             this.LB_TipoTelefono.Size = new System.Drawing.Size(88, 19);
             this.LB_TipoTelefono.TabIndex = 18;
@@ -375,9 +381,9 @@
             // 
             this.CB_TipoTelefono.FormattingEnabled = true;
             this.CB_TipoTelefono.ItemHeight = 23;
-            this.CB_TipoTelefono.Location = new System.Drawing.Point(650, 126);
+            this.CB_TipoTelefono.Location = new System.Drawing.Point(629, 124);
             this.CB_TipoTelefono.Name = "CB_TipoTelefono";
-            this.CB_TipoTelefono.Size = new System.Drawing.Size(200, 29);
+            this.CB_TipoTelefono.Size = new System.Drawing.Size(205, 29);
             this.CB_TipoTelefono.Style = MetroFramework.MetroColorStyle.Green;
             this.CB_TipoTelefono.TabIndex = 19;
             this.CB_TipoTelefono.UseSelectable = true;
@@ -398,14 +404,13 @@
             this.CB_TipoPersona.Location = new System.Drawing.Point(194, 84);
             this.CB_TipoPersona.Name = "CB_TipoPersona";
             this.CB_TipoPersona.Size = new System.Drawing.Size(200, 29);
-            this.CB_TipoPersona.Style = MetroFramework.MetroColorStyle.Green;
             this.CB_TipoPersona.TabIndex = 21;
             this.CB_TipoPersona.UseSelectable = true;
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(505, 273);
+            this.metroLabel1.Location = new System.Drawing.Point(496, 260);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(63, 19);
             this.metroLabel1.TabIndex = 22;
@@ -415,7 +420,7 @@
             // 
             this.CB_Country.FormattingEnabled = true;
             this.CB_Country.ItemHeight = 23;
-            this.CB_Country.Location = new System.Drawing.Point(649, 267);
+            this.CB_Country.Location = new System.Drawing.Point(635, 260);
             this.CB_Country.Name = "CB_Country";
             this.CB_Country.PromptText = "País";
             this.CB_Country.Size = new System.Drawing.Size(200, 29);
@@ -427,7 +432,7 @@
             // 
             this.CB_State.FormattingEnabled = true;
             this.CB_State.ItemHeight = 23;
-            this.CB_State.Location = new System.Drawing.Point(650, 302);
+            this.CB_State.Location = new System.Drawing.Point(635, 293);
             this.CB_State.Name = "CB_State";
             this.CB_State.PromptText = "Estado";
             this.CB_State.Size = new System.Drawing.Size(199, 29);
@@ -439,7 +444,7 @@
             // 
             this.CB_City.FormattingEnabled = true;
             this.CB_City.ItemHeight = 23;
-            this.CB_City.Location = new System.Drawing.Point(649, 337);
+            this.CB_City.Location = new System.Drawing.Point(634, 328);
             this.CB_City.Name = "CB_City";
             this.CB_City.PromptText = "Ciudad";
             this.CB_City.Size = new System.Drawing.Size(200, 29);
@@ -450,7 +455,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(510, 376);
+            this.metroLabel2.Location = new System.Drawing.Point(507, 438);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(104, 19);
             this.metroLabel2.TabIndex = 26;
@@ -462,16 +467,16 @@
             // 
             // 
             this.Txt_DireccionExacta.CustomButton.Image = null;
-            this.Txt_DireccionExacta.CustomButton.Location = new System.Drawing.Point(152, 1);
+            this.Txt_DireccionExacta.CustomButton.Location = new System.Drawing.Point(134, 1);
             this.Txt_DireccionExacta.CustomButton.Name = "";
-            this.Txt_DireccionExacta.CustomButton.Size = new System.Drawing.Size(47, 47);
+            this.Txt_DireccionExacta.CustomButton.Size = new System.Drawing.Size(65, 65);
             this.Txt_DireccionExacta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Txt_DireccionExacta.CustomButton.TabIndex = 1;
             this.Txt_DireccionExacta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Txt_DireccionExacta.CustomButton.UseSelectable = true;
             this.Txt_DireccionExacta.CustomButton.Visible = false;
             this.Txt_DireccionExacta.Lines = new string[0];
-            this.Txt_DireccionExacta.Location = new System.Drawing.Point(649, 376);
+            this.Txt_DireccionExacta.Location = new System.Drawing.Point(635, 420);
             this.Txt_DireccionExacta.MaxLength = 32767;
             this.Txt_DireccionExacta.Multiline = true;
             this.Txt_DireccionExacta.Name = "Txt_DireccionExacta";
@@ -481,7 +486,7 @@
             this.Txt_DireccionExacta.SelectionLength = 0;
             this.Txt_DireccionExacta.SelectionStart = 0;
             this.Txt_DireccionExacta.ShortcutsEnabled = true;
-            this.Txt_DireccionExacta.Size = new System.Drawing.Size(200, 49);
+            this.Txt_DireccionExacta.Size = new System.Drawing.Size(200, 67);
             this.Txt_DireccionExacta.Style = MetroFramework.MetroColorStyle.Green;
             this.Txt_DireccionExacta.TabIndex = 27;
             this.Txt_DireccionExacta.UseSelectable = true;
@@ -494,16 +499,16 @@
             // 
             // 
             this.Txt_Usuario.CustomButton.Image = null;
-            this.Txt_Usuario.CustomButton.Location = new System.Drawing.Point(170, 1);
+            this.Txt_Usuario.CustomButton.Location = new System.Drawing.Point(168, 1);
             this.Txt_Usuario.CustomButton.Name = "";
-            this.Txt_Usuario.CustomButton.Size = new System.Drawing.Size(29, 29);
+            this.Txt_Usuario.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.Txt_Usuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Txt_Usuario.CustomButton.TabIndex = 1;
             this.Txt_Usuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Txt_Usuario.CustomButton.UseSelectable = true;
             this.Txt_Usuario.CustomButton.Visible = false;
             this.Txt_Usuario.Lines = new string[0];
-            this.Txt_Usuario.Location = new System.Drawing.Point(134, 4);
+            this.Txt_Usuario.Location = new System.Drawing.Point(158, 4);
             this.Txt_Usuario.MaxLength = 32767;
             this.Txt_Usuario.Name = "Txt_Usuario";
             this.Txt_Usuario.PasswordChar = '\0';
@@ -512,7 +517,7 @@
             this.Txt_Usuario.SelectionLength = 0;
             this.Txt_Usuario.SelectionStart = 0;
             this.Txt_Usuario.ShortcutsEnabled = true;
-            this.Txt_Usuario.Size = new System.Drawing.Size(200, 31);
+            this.Txt_Usuario.Size = new System.Drawing.Size(200, 33);
             this.Txt_Usuario.Style = MetroFramework.MetroColorStyle.Green;
             this.Txt_Usuario.TabIndex = 29;
             this.Txt_Usuario.UseSelectable = true;
@@ -522,7 +527,7 @@
             // LB_Usuario
             // 
             this.LB_Usuario.AutoSize = true;
-            this.LB_Usuario.Location = new System.Drawing.Point(5, 9);
+            this.LB_Usuario.Location = new System.Drawing.Point(19, 4);
             this.LB_Usuario.Name = "LB_Usuario";
             this.LB_Usuario.Size = new System.Drawing.Size(53, 19);
             this.LB_Usuario.TabIndex = 28;
@@ -531,7 +536,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(5, 52);
+            this.metroLabel3.Location = new System.Drawing.Point(20, 52);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(75, 19);
             this.metroLabel3.TabIndex = 30;
@@ -539,6 +544,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.pictureBox2);
             this.metroPanel1.Controls.Add(this.Txt_Contraseña);
             this.metroPanel1.Controls.Add(this.LB_Usuario);
             this.metroPanel1.Controls.Add(this.metroLabel3);
@@ -547,13 +553,23 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(510, 174);
+            this.metroPanel1.Location = new System.Drawing.Point(476, 174);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(348, 84);
+            this.metroPanel1.Size = new System.Drawing.Size(370, 80);
             this.metroPanel1.TabIndex = 32;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::View.Properties.Resources.if_lock_19911;
+            this.pictureBox2.Location = new System.Drawing.Point(324, 49);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 33;
+            this.pictureBox2.TabStop = false;
             // 
             // Txt_Contraseña
             // 
@@ -570,7 +586,7 @@
             this.Txt_Contraseña.CustomButton.UseSelectable = true;
             this.Txt_Contraseña.CustomButton.Visible = false;
             this.Txt_Contraseña.Lines = new string[0];
-            this.Txt_Contraseña.Location = new System.Drawing.Point(134, 49);
+            this.Txt_Contraseña.Location = new System.Drawing.Point(158, 45);
             this.Txt_Contraseña.MaxLength = 32767;
             this.Txt_Contraseña.Name = "Txt_Contraseña";
             this.Txt_Contraseña.PasswordChar = '●';
@@ -590,7 +606,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(301, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(324, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -599,27 +615,51 @@
             // 
             // Btn_Aceptar
             // 
-            this.Btn_Aceptar.Location = new System.Drawing.Point(769, 458);
+            this.Btn_Aceptar.Location = new System.Drawing.Point(749, 502);
             this.Btn_Aceptar.Name = "Btn_Aceptar";
-            this.Btn_Aceptar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Aceptar.Size = new System.Drawing.Size(75, 33);
             this.Btn_Aceptar.TabIndex = 33;
             this.Btn_Aceptar.Text = "Aceptar";
             this.Btn_Aceptar.UseSelectable = true;
+            this.Btn_Aceptar.Click += new System.EventHandler(this.Btn_Aceptar_Click);
             // 
             // Btn_Salir
             // 
-            this.Btn_Salir.Location = new System.Drawing.Point(679, 458);
+            this.Btn_Salir.Location = new System.Drawing.Point(655, 502);
             this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Salir.Size = new System.Drawing.Size(75, 33);
             this.Btn_Salir.TabIndex = 34;
             this.Btn_Salir.Text = "Salir";
             this.Btn_Salir.UseSelectable = true;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
+            // 
+            // LB_TipoDireccion
+            // 
+            this.LB_TipoDireccion.AutoSize = true;
+            this.LB_TipoDireccion.Location = new System.Drawing.Point(490, 376);
+            this.LB_TipoDireccion.Name = "LB_TipoDireccion";
+            this.LB_TipoDireccion.Size = new System.Drawing.Size(93, 19);
+            this.LB_TipoDireccion.TabIndex = 35;
+            this.LB_TipoDireccion.Text = "Tipo Dirección";
+            // 
+            // CB_TipoDirecion
+            // 
+            this.CB_TipoDirecion.FormattingEnabled = true;
+            this.CB_TipoDirecion.ItemHeight = 23;
+            this.CB_TipoDirecion.Location = new System.Drawing.Point(634, 376);
+            this.CB_TipoDirecion.Name = "CB_TipoDirecion";
+            this.CB_TipoDirecion.Size = new System.Drawing.Size(200, 29);
+            this.CB_TipoDirecion.Style = MetroFramework.MetroColorStyle.Green;
+            this.CB_TipoDirecion.TabIndex = 36;
+            this.CB_TipoDirecion.UseSelectable = true;
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 515);
+            this.ClientSize = new System.Drawing.Size(858, 554);
+            this.Controls.Add(this.CB_TipoDirecion);
+            this.Controls.Add(this.LB_TipoDireccion);
             this.Controls.Add(this.Btn_Salir);
             this.Controls.Add(this.Btn_Aceptar);
             this.Controls.Add(this.metroPanel1);
@@ -653,9 +693,10 @@
             this.Controls.Add(this.LB_Cedula);
             this.Name = "Register";
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "Salir";
+            this.Text = "Register";
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -700,5 +741,8 @@
         private MetroFramework.Controls.MetroTextBox Txt_Contraseña;
         private MetroFramework.Controls.MetroButton Btn_Aceptar;
         private MetroFramework.Controls.MetroButton Btn_Salir;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private MetroFramework.Controls.MetroLabel LB_TipoDireccion;
+        private MetroFramework.Controls.MetroComboBox CB_TipoDirecion;
     }
 }
