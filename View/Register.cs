@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using BusinessLogic;
+
 
 
 namespace View {
-    public partial class Register : MetroForm{
+    public partial class Register : MetroForm {
+
+
+        public clsCatalogos Catalogo = new clsCatalogos();
+        
 
         public Register() {
-            
             InitializeComponent();
             InitializeComboBox();
         }
@@ -25,7 +30,6 @@ namespace View {
             /*Catalogo que se le da a cada ComboBox para obtener información de cada Insert que se realizó
             en la base de datos */
 
-            var Catalogo = new BusinessLogic.clsCatalogos();
             //----------------------------------------------------------
             CB_TipoPersona.DataSource = await Catalogo.getTipoPersona();
             CB_TipoPersona.DisplayMember = "DescripcionTipoPersona";
@@ -37,6 +41,7 @@ namespace View {
             CB_TipoEmail.ValueMember = "IDTipoEmail";
 
             //----------------------------------------------------------
+
 
             CB_TipoTelefono.DataSource = await Catalogo.getTipoTelefono();
             CB_TipoTelefono.DisplayMember = "DescripcionTipoTelefono";
@@ -55,12 +60,12 @@ namespace View {
             CB_Country.ValueMember = "IDCountry";
 
             //------------------------------------------------------------
-
+            CB_State.DataSource = await Catalogo.getState((int) CB_Country.SelectedValue);
             CB_State.DisplayMember = "NameState";
             CB_State.ValueMember = "IDState";
 
             //------------------------------------------------------------
-
+            CB_City.DataSource = await Catalogo.getCity((int) CB_State.SelectedValue);
             CB_City.DisplayMember = "NameCity";
             CB_City.ValueMember = "IDCity";
 
@@ -72,24 +77,54 @@ namespace View {
 
             //--------------------------------------------------------------
 
-            
-
         }
 
         private void Btn_Salir_Click(object sender, EventArgs e) {
-            Login LG = new Login();
-            Register RG = new Register();
 
-            if (MetroFramework.MetroMessageBox.Show(this, "Estás seguro que deseas salir?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+            if (MetroFramework.MetroMessageBox.Show(this, "Estás seguro que deseas salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                 this.Hide();
-                RG.Closed += (s, args) => this.Close();
+                Login LG = new Login();
                 LG.ShowDialog();
             }
         }
 
         private async void Btn_Aceptar_Click(object sender, EventArgs e) {
+            try {
+                if (await new clsRegistro().AutenticarUsuario (Txt_Cedula.Text.Trim(), (int) CB_TipoPersona.SelectedValue,
+                    Txt_Nombre.Text.Trim(), Txt_Apellido1.Text.Trim(), Txt_Apellido2.Text.Trim(), (DateTime) Dtp_FechaNacimiento.Value,
+                    (byte) CB_Genero.SelectedValue, Txt_Email.Text.Trim(), (byte) CB_TipoEmail.SelectedValue, Txt_Telefono.Text.Trim(),
+                    (byte) CB_TipoTelefono.SelectedValue, Txt_Usuario.Text.Trim(), Txt_Contraseña.Text.Trim(), (int) CB_Country.SelectedValue,
+                    (int) CB_State.SelectedValue, (int) CB_City.SelectedValue, (byte) CB_TipoDirecion.SelectedValue,
+                    Txt_DireccionExacta.Text.Trim())) {
 
+                    MetroFramework.MetroMessageBox.Show(this, "OK", "Cliente Registrado Correctamente..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                } else {
+                    MetroFramework.MetroMessageBox.Show(this, "OK", "No se pudo registrar sus datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            } catch (Exception ex) {
+
+                MessageBox.Show(ex.Message);
+
+            }
+
+        }
+    
+
+
+        private async void CB_Country_SelectionChangeCommitted(object sender, EventArgs e) {
+
+            CB_State.DataSource = await Catalogo.getState((int) CB_Country.SelectedValue);
+            CB_City.DataSource = await Catalogo.getCity((int) CB_State.SelectedValue);
+
+        }
+
+        private async void CB_State_SelectionChangeCommitted(object sender, EventArgs e) {
+            
+            CB_City.DataSource = await Catalogo.getCity((int) CB_State.SelectedValue);
             
         }
+
     }
 }

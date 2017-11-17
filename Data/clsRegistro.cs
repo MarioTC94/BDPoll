@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 
 namespace Data {
-    class clsRegistro {
+   public class clsRegistro {
 
         public bool Registrar(RegisterModel oRegistro) {
 

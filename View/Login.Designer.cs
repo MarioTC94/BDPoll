@@ -108,7 +108,7 @@
             this.Txt_Contraseña.ShortcutsEnabled = true;
             this.Txt_Contraseña.Size = new System.Drawing.Size(278, 35);
             this.Txt_Contraseña.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Txt_Contraseña.TabIndex = 4;
+            this.Txt_Contraseña.TabIndex = 2;
             this.Txt_Contraseña.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Txt_Contraseña.UseSelectable = true;
             this.Txt_Contraseña.UseSystemPasswordChar = true;
@@ -153,7 +153,7 @@
             this.Txt_Usuario.ShortcutsEnabled = true;
             this.Txt_Usuario.Size = new System.Drawing.Size(279, 35);
             this.Txt_Usuario.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Txt_Usuario.TabIndex = 2;
+            this.Txt_Usuario.TabIndex = 1;
             this.Txt_Usuario.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Txt_Usuario.UseSelectable = true;
             this.Txt_Usuario.WaterMark = "Usuario o Contraseña..";
@@ -203,7 +203,7 @@
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.LB_Usuario);
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "Inicia Sesión";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();

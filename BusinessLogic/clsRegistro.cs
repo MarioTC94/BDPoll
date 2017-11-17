@@ -9,7 +9,7 @@ using Model.FunctionModels;
 namespace BusinessLogic {
     public class clsRegistro {
         
-        public Task<bool> AuntenticarUsuario(String IDPersona, int TipoPersona, String Nombre, String Apellido1,  String Apellido2, DateTime FechaNac, 
+        public Task<bool> AutenticarUsuario(String IDPersona, int TipoPersona, String Nombre, String Apellido1,  String Apellido2, DateTime FechaNac, 
                                              int Genero, String Email, byte TipoEmail, String Telefono, byte TipoTelefono, String Usuario,
                                              String Contraseña, int Country, int State, int City, byte TipoDireccion, String NombreDireccion) {
 
@@ -23,7 +23,7 @@ namespace BusinessLogic {
                 if (String.IsNullOrEmpty(Telefono)) throw new ArgumentNullException("Telefono", "El Teléfono no puede estar vacío");
                 if (String.IsNullOrEmpty(Usuario)) throw new ArgumentNullException("Usuario", "El Usuario no puede estar vacío");
                 if (String.IsNullOrEmpty(Contraseña)) throw new ArgumentNullException("Contraseña", "La Contraseña no puede estar vacía");
-                if (String.IsNullOrEmpty(NombreDireccion)) throw new ArgumentNullException("Nombre", "El campo de Nombre Dirección no puede estar vacia");
+                if (String.IsNullOrEmpty(NombreDireccion)) throw new ArgumentNullException("NombreDireccion", "El campo de Nombre Dirección no puede estar vacia");
 
 
                 String Salt = Encrypt.GetRandomSalt();
@@ -52,14 +52,8 @@ namespace BusinessLogic {
                     Salt = Salt,
                     NombreDireccion = NombreDireccion
                 };
-                
-
-                
-
-                return true;
+                return new Data.clsRegistro().Registrar(oRegister);
             });
-
-
         }
     }
 }
