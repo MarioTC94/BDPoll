@@ -35,8 +35,22 @@
             this.btnFacturacion = new MetroFramework.Controls.MetroButton();
             this.btn_ResponderCuestionario = new MetroFramework.Controls.MetroButton();
             this.btnCrearCuestionario = new MetroFramework.Controls.MetroButton();
-            this.pnPrincipal.SuspendLayout();
+            this.pnMain.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnPrincipal
+            // 
+            this.pnPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnPrincipal.HorizontalScrollbarBarColor = true;
+            this.pnPrincipal.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnPrincipal.HorizontalScrollbarSize = 10;
+            this.pnPrincipal.Location = new System.Drawing.Point(187, 60);
+            this.pnPrincipal.Name = "pnPrincipal";
+            this.pnPrincipal.Size = new System.Drawing.Size(676, 406);
+            this.pnPrincipal.TabIndex = 1;
+            this.pnPrincipal.VerticalScrollbarBarColor = true;
+            this.pnPrincipal.VerticalScrollbarHighlightOnWheel = false;
+            this.pnPrincipal.VerticalScrollbarSize = 10;
             // 
             // pnMain
             // 
@@ -108,34 +122,20 @@
             this.btnCrearCuestionario.Name = "btnCrearCuestionario";
             this.btnCrearCuestionario.Size = new System.Drawing.Size(167, 56);
             this.btnCrearCuestionario.TabIndex = 3;
-            this.btnCrearCuestionario.Text = "Crear Cuestionaro";
+            this.btnCrearCuestionario.Text = "Crear Cuestionario";
             this.btnCrearCuestionario.UseSelectable = true;
             this.btnCrearCuestionario.Click += new System.EventHandler(this.btnCrearCuestionario_Click);
             // 
-            // pnPrincipal
-            // 
-            this.pnPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnPrincipal.HorizontalScrollbarBarColor = true;
-            this.pnPrincipal.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnPrincipal.HorizontalScrollbarSize = 10;
-            this.pnPrincipal.Location = new System.Drawing.Point(187, 60);
-            this.pnPrincipal.Name = "pnPrincipal";
-            this.pnPrincipal.Size = new System.Drawing.Size(676, 406);
-            this.pnPrincipal.TabIndex = 1;
-            this.pnPrincipal.VerticalScrollbarBarColor = true;
-            this.pnPrincipal.VerticalScrollbarHighlightOnWheel = false;
-            this.pnPrincipal.VerticalScrollbarSize = 10;
-            // 
-            // btnResponderCuestionario
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 486);
             this.Controls.Add(this.pnPrincipal);
             this.Controls.Add(this.pnMain);
-            this.Name = "btnResponderCuestionario";
+            this.Name = "Main";
             this.Text = "Cuestionarios";
-            this.pnPrincipal.ResumeLayout(false);
+            this.pnMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

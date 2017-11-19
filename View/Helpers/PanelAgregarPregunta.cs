@@ -32,7 +32,7 @@ namespace View.Helpers {
             this.btnRemove.Size = new System.Drawing.Size(94, 32);
             this.btnRemove.Location = new System.Drawing.Point(305, 37);
             this.btnRemove.Click += (e, x) => {
-                this.ListPreguntas.Remove(this.ListPreguntas.FirstOrDefault(x => x.))
+               // this.ListPreguntas.Remove(this.ListPreguntas.FirstOrDefault(x => x.))
             };
 
             this.oPanel = new MetroPanel();

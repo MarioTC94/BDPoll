@@ -17,7 +17,7 @@ namespace View.Forms{
         private void Btn_IniciaSesion_Click(object sender, EventArgs e) {
             try {
                 if (new BusinessLogic.Login().tryLogin(Txt_Usuario.Text.Trim(), Txt_Contraseña.Text.Trim())) {
-                    MetroFramework.MetroMessageBox.Show(this, "!Bievenido " + Usuario.Nombre + "!" ,"Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroFramework.MetroMessageBox.Show(this, "!Bienvenido " + Usuario.Nombre + "!" ,"Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 } else {
                     this.DialogResult = DialogResult.None;

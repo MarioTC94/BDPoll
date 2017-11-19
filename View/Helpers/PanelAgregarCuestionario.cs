@@ -52,8 +52,7 @@ namespace View.Helpers {
             this.btnRemove.Size = new System.Drawing.Size(94, 32);
             this.btnRemove.Location = new System.Drawing.Point(533, 46);
             this.btnRemove.Click += (x, y) => {
-                this.ListCuestionario.Remove()
-                this.ListCuestionario.Select(x => x.IDCuestionario = IDCuestionario);
+              //  this.ListCuestionario.Select(x => x.IDCuestionario = IDCuestionario);
                 this.oPanel.Parent.Controls.Remove(this.oPanel);
             };
 
