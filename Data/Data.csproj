@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="clsCatalogos.cs" />
     <Compile Include="clsConnection.cs" />
+    <Compile Include="clsCuestionario.cs" />
     <Compile Include="clsRegistro.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
