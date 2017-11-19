@@ -43,6 +43,7 @@
     <Compile Include="clsCatalogos.cs" />
     <Compile Include="clsRegistro.cs" />
     <Compile Include="Credenciales\Usuario.cs" />
+    <Compile Include="Cuestionario.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Encrypt.cs" />

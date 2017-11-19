@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BusinessLogic {
   public class Cuestionario {
 
@@ -14,11 +15,16 @@ namespace BusinessLogic {
                 if (String.IsNullOrEmpty(oCuestionario.Titulo)) throw new ArgumentNullException("Titulo", "Por favor ingrese el título del cuestionario");
                 if (String.IsNullOrEmpty(oCuestionario.Descripcion)) throw new ArgumentNullException("Descripcion", "Por favor ingrese la descripción del cuestionario");
 
-                return true;
+                foreach (Model.Pregunta oPregunta in oCuestionario.Pregunta) {
+                    
+                }
+                
+
+                return new Data.clsCuestionario().InsertarCuestionario(oCuestionario);
 
             });
             
-
+          
         }
     }
 }

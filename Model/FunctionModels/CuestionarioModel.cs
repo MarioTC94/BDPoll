@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model.FunctionModels {
-    class CuestionarioModel {
+   public class CuestionarioModel {
 
         public int IDCuestionario { get; set; }
         public int TipoCustionario { get; set; }
