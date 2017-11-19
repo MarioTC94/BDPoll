@@ -28,16 +28,16 @@
             this.btnAgregarCuestionario = new MetroFramework.Controls.MetroButton();
             this.btnCaja = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.lbFechaInicio = new MetroFramework.Controls.MetroLabel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.lbFechaInicio = new MetroFramework.Controls.MetroLabel();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -107,24 +107,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.Location = new System.Drawing.Point(11, 129);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaInicio.TabIndex = 4;
-            // 
-            // lbFechaInicio
-            // 
-            this.lbFechaInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbFechaInicio.AutoSize = true;
-            this.lbFechaInicio.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lbFechaInicio.Location = new System.Drawing.Point(44, 101);
-            this.lbFechaInicio.Name = "lbFechaInicio";
-            this.lbFechaInicio.Size = new System.Drawing.Size(125, 25);
-            this.lbFechaInicio.TabIndex = 5;
-            this.lbFechaInicio.Text = "Fecha de Inicio";
-            // 
             // metroPanel2
             // 
             this.metroPanel2.Controls.Add(this.metroLabel3);
@@ -145,6 +127,35 @@
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.Location = new System.Drawing.Point(40, 107);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(139, 25);
+            this.metroLabel3.TabIndex = 7;
+            this.metroLabel3.Text = "Fecha Terminada";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(27, 144);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(171, 20);
+            this.dateTimePicker2.TabIndex = 6;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.Location = new System.Drawing.Point(27, 214);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(50, 25);
+            this.metroLabel2.TabIndex = 1;
+            this.metroLabel2.Text = "Total:";
             // 
             // metroLabel1
             // 
@@ -183,35 +194,25 @@
             this.metroButton2.TabIndex = 2;
             this.metroButton2.Text = "Agregar Cuestionario";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
-            // metroLabel2
+            // lbFechaInicio
             // 
-            this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.Location = new System.Drawing.Point(27, 214);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(50, 25);
-            this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Total:";
+            this.lbFechaInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFechaInicio.AutoSize = true;
+            this.lbFechaInicio.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lbFechaInicio.Location = new System.Drawing.Point(44, 101);
+            this.lbFechaInicio.Name = "lbFechaInicio";
+            this.lbFechaInicio.Size = new System.Drawing.Size(125, 25);
+            this.lbFechaInicio.TabIndex = 5;
+            this.lbFechaInicio.Text = "Fecha de Inicio";
             // 
-            // metroLabel3
+            // dtpFechaInicio
             // 
-            this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.Location = new System.Drawing.Point(40, 107);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(139, 25);
-            this.metroLabel3.TabIndex = 7;
-            this.metroLabel3.Text = "Fecha Terminada";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(27, 144);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(171, 20);
-            this.dateTimePicker2.TabIndex = 6;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(11, 129);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicio.TabIndex = 4;
             // 
             // ucAgregarCuestionario
             // 

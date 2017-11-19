@@ -13,5 +13,9 @@ namespace View.UserControl {
         public ucAgregarCuestionario() {
             InitializeComponent();
         }
+
+        private void metroButton2_Click(object sender, EventArgs e) {
+            new Forms.Agregar_Cuestionario().Show();
+        }
     }
 }
