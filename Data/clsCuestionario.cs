@@ -73,5 +73,30 @@ namespace Data {
                 }
             }
         }
+
+        public DataTable CuestionariosParaContestar(String UsuarioLogueado, DateTime FechaActual) {
+            SqlCommand oSQLC = new SqlCommand("SELECT IDCuestionario, Titulo, Descripcion, FechaInicio, FechaFinal FROM dbo.Cuestionario WHERE Activo = 1 AND IDUsuario != @Usuario AND FechaFinal >= @FechaActual");
+            oSQLC.Parameters.AddWithValue("@Usuario", UsuarioLogueado);
+            return new clsConnection().SelectData(oSQLC);
+        }
+
+        public DataTable MisCuestionarios(String UsuarioLogueado) {
+            SqlCommand oSQLC = new SqlCommand("SELECT IDCuestionario, Titulo, Descripcion, FechaInicio, FechaFinal FROM dbo.Cuestionario WHERE Activo = 1 AND IDUsuario = @Usuario ");
+            oSQLC.Parameters.AddWithValue("@Usuario", UsuarioLogueado);
+            return new clsConnection().SelectData(oSQLC);
+        }
+
+        public DataTable PreguntasDeCuestionario(String IDCuestionario) {
+            SqlCommand oSQLC = new SqlCommand("SELECT b.IDPregunta, a.IDTipoPregunta, a.DescripcionTipoPregunta FROM dbo.Pregunta a JOIN dbo.TipoPregunta a ON a.IDTipoPregunta = b.IDTipoPregunta a.Activo = 1 AND a.IDCuestionario = @IDCuestionario");
+            oSQLC.Parameters.AddWithValue("@IDCuestionario", IDCuestionario);
+            return new clsConnection().SelectData(oSQLC);
+        }
+
+        public DataTable OpcionesDePregunta(String IDCuestionario, String IDPregunta) {
+            SqlCommand oSQLC = new SqlCommand("SELECT IDOpcion, DescripcionOpcion FROM dbo.Opciones WHERE IDCuestionario = @IDCuestionario AND Activo = 1 AND IDPregunta = @IDPregunta");
+            oSQLC.Parameters.AddWithValue("@IDCuestionario", IDCuestionario);
+            oSQLC.Parameters.AddWithValue("@IDPregunta", IDPregunta);
+            return new clsConnection().SelectData(oSQLC);
+        }
     }
 }
