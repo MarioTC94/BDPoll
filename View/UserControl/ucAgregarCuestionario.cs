@@ -15,7 +15,7 @@ namespace View.UserControl {
         }
 
         private void metroButton2_Click(object sender, EventArgs e) {
-            new Forms.Agregar_Cuestionario().Show();
+            new Forms.btnSalir().Show();
         }
     }
 }
