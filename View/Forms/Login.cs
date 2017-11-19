@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using BusinessLogic.Credenciales;
 
 namespace View.Forms{
 
@@ -16,6 +17,7 @@ namespace View.Forms{
         private void Btn_IniciaSesion_Click(object sender, EventArgs e) {
             try {
                 if (new BusinessLogic.Login().tryLogin(Txt_Usuario.Text.Trim(), Txt_Contraseña.Text.Trim())) {
+                    MetroFramework.MetroMessageBox.Show(this, "!Bievenido " + Usuario.Nombre + "!" ,"Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 } else {
                     this.DialogResult = DialogResult.None;

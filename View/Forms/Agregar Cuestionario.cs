@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View.Forms {
-    public partial class Agregar_Cuestionario : MetroFramework.Forms.MetroForm {
-        public Agregar_Cuestionario() {
+    public partial class btnSalir : MetroFramework.Forms.MetroForm {
+        public btnSalir() {
             InitializeComponent();
         }
     }
