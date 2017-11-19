@@ -10,12 +10,21 @@ using System.Windows.Forms;
 
 namespace View.UserControl {
     public partial class ucAgregarCuestionario : MetroFramework.Controls.MetroUserControl {
+
+        public List<Model.Cuestionario> ListaCuestionarios { get; set; }
+
         public ucAgregarCuestionario() {
             InitializeComponent();
         }
 
         private void metroButton2_Click(object sender, EventArgs e) {
-            new Forms.AgregarCuestionario().Show();
+            Forms.AgregarCuestionario oForm = new Forms.AgregarCuestionario();
+            if( oForm.ShowDialog(this) == DialogResult.OK) {
+                List<Model.Pregunta> oPreguntas = oForm.ListPreguntas;
+                if( oPreguntas.Any() ) {
+                    this.ListaCuestionarios.Add(New)
+                }
+            }
         }
     }
 }

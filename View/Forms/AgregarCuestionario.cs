@@ -14,7 +14,6 @@ namespace View.Forms {
         public List<Model.Pregunta> ListPreguntas { get; set; }
 
         public AgregarCuestionario(List<Model.Pregunta> ListPreguntas = null) {
-            this.ListPreguntas = ListPreguntas ?? new List<Model.Pregunta>();
             InitializeComponent();
         }
 
@@ -30,7 +29,6 @@ namespace View.Forms {
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion4 });
                 oPregunta.IDTipoPregunta = 2; 
                 this.ListPreguntas.Add(oPregunta);
-                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(this.ListPreguntas).getPanel("Respuesta Unica", oForm.DescripcionPregunta));
             }
         }
 
