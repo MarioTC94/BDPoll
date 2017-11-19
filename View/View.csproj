@@ -54,17 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Agregar Cuestionario.cs">
+    <Compile Include="Forms\AgregarCuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Agregar Cuestionario.Designer.cs">
-      <DependentUpon>Agregar Cuestionario.cs</DependentUpon>
+    <Compile Include="Forms\AgregarCuestionario.Designer.cs">
+      <DependentUpon>AgregarCuestionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Contestar Cuestionario.cs">
+    <Compile Include="Forms\ContestarCuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Contestar Cuestionario.Designer.cs">
-      <DependentUpon>Contestar Cuestionario.cs</DependentUpon>
+    <Compile Include="Forms\ContestarCuestionario.Designer.cs">
+      <DependentUpon>ContestarCuestionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -141,11 +141,11 @@
     <Compile Include="UserControl\ucPerfil.Designer.cs">
       <DependentUpon>ucPerfil.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Agregar Cuestionario.resx">
-      <DependentUpon>Agregar Cuestionario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AgregarCuestionario.resx">
+      <DependentUpon>AgregarCuestionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Contestar Cuestionario.resx">
-      <DependentUpon>Contestar Cuestionario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ContestarCuestionario.resx">
+      <DependentUpon>ContestarCuestionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

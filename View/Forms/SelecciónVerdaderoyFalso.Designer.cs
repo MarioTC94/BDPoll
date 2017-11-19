@@ -80,6 +80,7 @@
             this.metroButton2.TabIndex = 13;
             this.metroButton2.Text = "Cancelar";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton1
             // 
@@ -89,6 +90,7 @@
             this.metroButton1.TabIndex = 12;
             this.metroButton1.Text = "Aceptar";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // SelecciónVerdaderoyFalso
             // 

@@ -11,14 +11,14 @@ namespace View.Helpers {
 
     class PanelAgregarPregunta {
 
-        private MetroPanel oPanel;
+        public MetroPanel oPanel;
         private MetroPanel oBar;
         private MetroButton btnRemove;
         private MetroLabel lbPregunta;
         private MetroLabel lbTipoPregunta;
         private List<Model.Pregunta> ListPreguntas;
 
-        public PanelAgregarPregunta(ref List<Model.Pregunta> ListPreguntas) {
+        public PanelAgregarPregunta(List<Model.Pregunta> ListPreguntas) {
             this.ListPreguntas = ListPreguntas;
 
             this.lbPregunta = new MetroLabel();
@@ -38,6 +38,16 @@ namespace View.Helpers {
             this.oPanel = new MetroPanel();
             this.oPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.oPanel.Height = 100;
+
+            this.oPanel.Controls.Add(lbPregunta);
+            this.oPanel.Controls.Add(lbTipoPregunta);
+            this.oPanel.Controls.Add(btnRemove);
+        }
+
+        public MetroPanel getPanel(String TipoPregunta, String Pregunta) {
+            this.lbPregunta.Text = Pregunta;
+            this.lbTipoPregunta.Text = TipoPregunta;
+            return this.oPanel;
         }
     }
 }
