@@ -10,7 +10,7 @@ namespace Model{
         }
         public string NombreUsuario { get; set; }
         public byte[] Contrasena { get; set; }
-        public byte[] Salt { get; set; }
+        public string Salt { get; set; }
         public bool Activo { get; set; }
    
         public virtual ICollection<Cuestionario> Cuestionario { get; set; }

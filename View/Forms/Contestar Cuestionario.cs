@@ -7,13 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Forms;
-using MetroFramework;
 
-namespace View {
-    public partial class Main : MetroForm {
-
-        public Main() {
+namespace View.Forms {
+    public partial class Contestar_Cuestionario : MetroFramework.Forms.MetroForm {
+        public Contestar_Cuestionario() {
             InitializeComponent();
         }
     }

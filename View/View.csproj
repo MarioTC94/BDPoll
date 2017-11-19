@@ -54,16 +54,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\Agregar Cuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Forms\Agregar Cuestionario.Designer.cs">
+      <DependentUpon>Agregar Cuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contestar Cuestionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Contestar Cuestionario.Designer.cs">
+      <DependentUpon>Contestar Cuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -73,22 +85,103 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Register.cs">
+    <Compile Include="Forms\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
+    <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Login.resx">
+    <Compile Include="Forms\SelecciónMultiple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecciónMultiple.Designer.cs">
+      <DependentUpon>SelecciónMultiple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecciónUnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecciónUnica.Designer.cs">
+      <DependentUpon>SelecciónUnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelecciónVerdaderoyFalso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelecciónVerdaderoyFalso.Designer.cs">
+      <DependentUpon>SelecciónVerdaderoyFalso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucAgregarCuestionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucAgregarCuestionario.Designer.cs">
+      <DependentUpon>ucAgregarCuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucFacturación.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucFacturación.Designer.cs">
+      <DependentUpon>ucFacturación.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucInicio.Designer.cs">
+      <DependentUpon>ucInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucMiscuestionarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucMiscuestionarios.Designer.cs">
+      <DependentUpon>ucMiscuestionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucPerfil.Designer.cs">
+      <DependentUpon>ucPerfil.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Agregar Cuestionario.resx">
+      <DependentUpon>Agregar Cuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Contestar Cuestionario.resx">
+      <DependentUpon>Contestar Cuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Register.resx">
+    <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecciónMultiple.resx">
+      <DependentUpon>SelecciónMultiple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecciónUnica.resx">
+      <DependentUpon>SelecciónUnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelecciónVerdaderoyFalso.resx">
+      <DependentUpon>SelecciónVerdaderoyFalso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ucAgregarCuestionario.resx">
+      <DependentUpon>ucAgregarCuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ucFacturación.resx">
+      <DependentUpon>ucFacturación.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ucInicio.resx">
+      <DependentUpon>ucInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ucMiscuestionarios.resx">
+      <DependentUpon>ucMiscuestionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ucPerfil.resx">
+      <DependentUpon>ucPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -135,5 +228,6 @@
   <ItemGroup>
     <None Include="Resources\if_lock_19911.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

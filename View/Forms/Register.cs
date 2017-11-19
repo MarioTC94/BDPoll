@@ -12,14 +12,13 @@ using BusinessLogic;
 
 
 
-namespace View {
+namespace View.Forms {
     public partial class Register : MetroForm {
 
-
         public clsCatalogos Catalogo = new clsCatalogos();
-        
 
         public Register() {
+
             InitializeComponent();
             InitializeComboBox();
         }
@@ -30,7 +29,7 @@ namespace View {
             /*Catalogo que se le da a cada ComboBox para obtener información de cada Insert que se realizó
             en la base de datos */
 
-            //----------------------------------------------------------
+        //----------------------------------------------------------
             CB_TipoPersona.DataSource = await Catalogo.getTipoPersona();
             CB_TipoPersona.DisplayMember = "DescripcionTipoPersona";
             CB_TipoPersona.ValueMember = "IDTipoPersona";
@@ -92,21 +91,20 @@ namespace View {
             try {
                 if (await new clsRegistro().AutenticarUsuario (Txt_Cedula.Text.Trim(), (int) CB_TipoPersona.SelectedValue,
                     Txt_Nombre.Text.Trim(), Txt_Apellido1.Text.Trim(), Txt_Apellido2.Text.Trim(), (DateTime) Dtp_FechaNacimiento.Value,
-                    (byte) CB_Genero.SelectedValue, Txt_Email.Text.Trim(), (byte) CB_TipoEmail.SelectedValue, Txt_Telefono.Text.Trim(),
+                    (int) CB_Genero.SelectedValue, Txt_Email.Text.Trim(), (byte) CB_TipoEmail.SelectedValue, Txt_Telefono.Text.Trim(),
                     (byte) CB_TipoTelefono.SelectedValue, Txt_Usuario.Text.Trim(), Txt_Contraseña.Text.Trim(), (int) CB_Country.SelectedValue,
                     (int) CB_State.SelectedValue, (int) CB_City.SelectedValue, (byte) CB_TipoDirecion.SelectedValue,
                     Txt_DireccionExacta.Text.Trim())) {
 
-                    MetroFramework.MetroMessageBox.Show(this, "OK", "Cliente Registrado Correctamente..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MetroFramework.MetroMessageBox.Show(this, "Cliente Registrado Correctamente..", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ( (MetroForm) Parent ).DialogResult = DialogResult.OK;
+                    this.Dispose();
                 } else {
-                    MetroFramework.MetroMessageBox.Show(this, "OK", "No se pudo registrar sus datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MetroFramework.MetroMessageBox.Show(this, "No se pudo registrar sus datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             } catch (Exception ex) {
-
-                MessageBox.Show(ex.Message);
-
+                MetroFramework.MetroMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

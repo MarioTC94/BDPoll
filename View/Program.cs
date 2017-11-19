@@ -16,9 +16,9 @@ namespace View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (new Login().ShowDialog() == DialogResult.OK)
+            if (new Forms.Login().ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Register());
+                Application.Run(new Forms.Main());
             }
         }
     }

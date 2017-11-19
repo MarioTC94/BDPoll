@@ -1,4 +1,4 @@
-﻿namespace View {
+﻿namespace View.Forms {
     partial class Register {
         /// <summary>
         /// Required designer variable.

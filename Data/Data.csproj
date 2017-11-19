@@ -43,6 +43,7 @@
     <Compile Include="clsCatalogos.cs" />
     <Compile Include="clsConnection.cs" />
     <Compile Include="clsRegistro.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
@@ -51,6 +52,9 @@
       <Project>{13895a6e-f1ae-49a4-9876-a8d159660adb}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

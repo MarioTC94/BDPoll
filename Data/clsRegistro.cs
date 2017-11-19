@@ -21,21 +21,21 @@ namespace Data {
                 InfoPersona = "INSERT INTO PersonaExtranjera(IDPersonaExtranjera, IDGenero, Nombre, Apellido1, FechaNacimiento) VALUES(@IDPersona, @IDGenero, @Nombre, @Apellido1, @FechaNacimiento);";
 
             String Telefono = "INSERT INTO Telefono(IDPersona, IDTipoTelefono, NumeroTelefono) VALUES(@IDPersona, @IDTipoTelefono, @NumeroTelefono);";
-            String Direccion = "INSERT INTO Direccion(IDPersona, IDTipoDireccion, IDCity, IDState, IDCountry, NombreDireccion) VALUES (@IDPersona, @IDTipoDireccion, IDCity, IDState, IDCountry, NombreDireccion);";
+            String Direccion = "INSERT INTO Direccion(IDPersona, IDTipoDireccion, IDCity, IDState, IDCountry, NombreDireccion) VALUES (@IDPersona, @IDTipoDireccion, @IDCity, @IDState, @IDCountry, @NombreDireccion);";
             String Email = "INSERT INTO Email(IDPersona, IDTipoEmail, NombreEmail) VALUES (@IDPersona, @IDTipoEmail, @NombreEmail);";
-            String Usuario = "INSERT INTO Usuario(NombreUsuario, Contrasena, Salt) VALUES (@NombreUsuario, @Contraseña, @Salt);";
+            String Usuario = "INSERT INTO Usuario(NombreUsuario, Contrasena, Salt, IDPersona) VALUES (@NombreUsuario, @Contrasena, @Salt, @IDPersona);";
 
             oSQLC.CommandText = Persona + InfoPersona + Telefono + Direccion + Email + Usuario;
             oSQLC.Parameters.AddWithValue("@IDPersona", oRegistro.IDPersona);
             oSQLC.Parameters.AddWithValue("@IDTipoPersona", oRegistro.IDTipoPersona);
-            oSQLC.Parameters.AddWithValue("@Genero", oRegistro.IDGenero);
+            oSQLC.Parameters.AddWithValue("@IDGenero", oRegistro.IDGenero);
             oSQLC.Parameters.AddWithValue("@Nombre", oRegistro.Nombre);
             oSQLC.Parameters.AddWithValue("@Apellido1", oRegistro.Apellido1);
-            oSQLC.Parameters.AddWithValue("@Apelldo2", oRegistro.Apellido2);
+            oSQLC.Parameters.AddWithValue("@Apellido2", oRegistro.Apellido2);
             oSQLC.Parameters.AddWithValue("@FechaNacimiento", oRegistro.FechaNac);
             oSQLC.Parameters.AddWithValue("@IDTipoTelefono", oRegistro.IDTipoTelefono);
-            oSQLC.Parameters.AddWithValue("@MumeroTelefono", oRegistro.NumeroTelefono);
-            oSQLC.Parameters.AddWithValue("@TipoDireccion", oRegistro.TipoDireccion);
+            oSQLC.Parameters.AddWithValue("@NumeroTelefono", oRegistro.NumeroTelefono);
+            oSQLC.Parameters.AddWithValue("@IDTipoDireccion", oRegistro.TipoDireccion);
             oSQLC.Parameters.AddWithValue("@IDCity", oRegistro.City);
             oSQLC.Parameters.AddWithValue("@IDState", oRegistro.States);
             oSQLC.Parameters.AddWithValue("@IDCountry", oRegistro.Country);
@@ -48,6 +48,18 @@ namespace Data {
 
             return new clsConnection().CMD(oSQLC);
        
+        }
+
+        public bool PersonaExiste(String IDPersona) {
+            SqlCommand oSQLC = new SqlCommand("SELECT IDPersona FROM Persona WHERE IDPersona = @ID AND Activo = 1");
+            oSQLC.Parameters.AddWithValue("@ID", IDPersona);
+            return new Data.clsConnection().Exists(oSQLC);
+        }
+
+        public bool UsarioExiste(String NombreUsuario) {
+            SqlCommand oSQLC = new SqlCommand("SELECT NombreUsuario FROM Usuario WHERE NombreUsuario = @ID AND Activo = 1");
+            oSQLC.Parameters.AddWithValue("@ID", NombreUsuario);
+            return new Data.clsConnection().Exists(oSQLC);
         }
 
     }

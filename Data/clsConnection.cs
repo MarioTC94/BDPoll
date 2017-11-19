@@ -43,24 +43,48 @@ namespace Data {
         }
 
         internal bool CMD(SqlCommand oSQLC) {
-            using (SqlTransaction tran = oCN.BeginTransaction()) {
-                try {
-                    oSQLC.Connection = oCN;
-                    if (OpenConnection()) {
-                        oSQLC.ExecuteNonQuery();
-                        tran.Commit();
-                        oCN.Close();
-                        return true;
-                    }
-                    oCN.Close();
-                    return false;
-                } catch (Exception ex) {
-                    tran.Rollback();
-                    throw new Exception("No se pudo completar la solicitud", ex);
 
+            try {
+                if (OpenConnection()) {
+                    SqlTransaction transaction = oCN.BeginTransaction();
+                    oSQLC.Connection = oCN;
+                    oSQLC.Transaction = transaction;
+                    oSQLC.ExecuteNonQuery();
+                    transaction.Commit();
+                    oCN.Close();
+                    return true;
                 }
+                oCN.Close();
+                return false;
+            } catch (Exception ex) {
+                oSQLC.Transaction.Rollback();
+                oCN.Close();
+                throw new Exception("No se pudo completar la solicitud", ex);
             }
+
+            //oSQLC.Connection = oCN;
+            //using (SqlTransaction transaction = oCN.BeginTransaction()) {
+
+            ////    try {
+
+            ////        if (OpenConnection()) {
+            ////            transaction.Commit();
+            ////            oSQLC.ExecuteNonQuery();
+            ////            oCN.Close();
+            ////            return true;
+            ////        }            
+            ////        oCN.Close();
+            ////    return false;
+            ////} catch (Exception ex) {
+            ////        transaction.Rollback();
+            ////        throw new Exception("No se pudo completar la solicitud", ex);
+            ////    }
+            ////}
         }
+            
+            
+            
+        
 
         internal DataTable SelectData(SqlCommand oSQLC) {
             try {
