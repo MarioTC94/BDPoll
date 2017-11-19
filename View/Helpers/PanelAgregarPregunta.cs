@@ -9,7 +9,7 @@ using MetroFramework.Forms;
 
 namespace View.Helpers {
 
-    class PanelAgregarPregunta {
+    public class PanelAgregarPregunta {
 
         public MetroPanel oPanel;
         private MetroPanel oBar;
@@ -31,8 +31,8 @@ namespace View.Helpers {
             this.btnRemove.Text = "Remover";
             this.btnRemove.Size = new System.Drawing.Size(94, 32);
             this.btnRemove.Location = new System.Drawing.Point(305, 37);
-            this.btnRemove.Click += (e, x) => {
-                this.ListPreguntas.Remove(this.ListPreguntas.FirstOrDefault(x => x.))
+            this.btnRemove.Click += (e, z) => {
+                this.oPanel.Parent.Li
             };
 
             this.oPanel = new MetroPanel();
@@ -46,7 +46,9 @@ namespace View.Helpers {
 
         public MetroPanel getPanel(String TipoPregunta, String Pregunta) {
             this.lbPregunta.Text = Pregunta;
+            this.lbPregunta.Size = this.lbPregunta.MinimumSize;
             this.lbTipoPregunta.Text = TipoPregunta;
+            this.lbTipoPregunta.Size = this.lbTipoPregunta.MinimumSize;
             return this.oPanel;
         }
     }

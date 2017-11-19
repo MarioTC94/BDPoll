@@ -12,9 +12,11 @@ namespace View.Forms {
     public partial class AgregarCuestionario : MetroFramework.Forms.MetroForm {
 
         public List<Model.Pregunta> ListPreguntas { get; set; }
+        public List<Helpers.PanelAgregarPregunta> ListPanelAgregar { get; set; }
 
         public AgregarCuestionario(List<Model.Pregunta> ListPreguntas = null) {
-            this.ListPreguntas = ListPreguntas ?? new List<Model.Pregunta>();
+            this.ListPreguntas =  new List<Model.Pregunta>();
+            this.ListPanelAgregar = new List<Helpers.PanelAgregarPregunta>();
             InitializeComponent();
         }
 
@@ -30,7 +32,9 @@ namespace View.Forms {
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion4 });
                 oPregunta.IDTipoPregunta = 2; 
                 this.ListPreguntas.Add(oPregunta);
-                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(this.ListPreguntas).getPanel("Respuesta Unica", oForm.DescripcionPregunta));
+                var p = new Helpers.PanelAgregarPregunta(this.ListPreguntas);
+                this.ListPanelAgregar.Add(p);
+                this.pnAgregarCuestionario.Controls.Add(p.getPanel("Respuesta Unica", oForm.DescripcionPregunta));
             }
         }
 
