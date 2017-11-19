@@ -22,7 +22,9 @@ namespace View.UserControl {
             if( oForm.ShowDialog(this) == DialogResult.OK) {
                 List<Model.Pregunta> oPreguntas = oForm.ListPreguntas;
                 if( oPreguntas.Any() ) {
-                    this.ListaCuestionarios.Add(New)
+                    Model.Cuestionario oCuestionario = new Model.Cuestionario();
+                    oCuestionario.Pregunta = oPreguntas;
+                    this.ListaCuestionarios.Add(oCuestionario);
                 }
             }
         }

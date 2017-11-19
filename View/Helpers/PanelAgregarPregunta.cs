@@ -31,13 +31,10 @@ namespace View.Helpers {
             this.btnRemove.Text = "Remover";
             this.btnRemove.Size = new System.Drawing.Size(94, 32);
             this.btnRemove.Location = new System.Drawing.Point(305, 37);
-<<<<<<< HEAD
-            this.btnRemove.Click += (e, x) => {
-               // this.ListPreguntas.Remove(this.ListPreguntas.FirstOrDefault(x => x.))
-=======
+
             this.btnRemove.Click += (e, z) => {
-                this.oPanel.Parent.Li
->>>>>>> c6f8ad09384e48c56adbd46ae92294c45f8bd28c
+                
+
             };
 
             this.oPanel = new MetroPanel();

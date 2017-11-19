@@ -20,7 +20,7 @@ namespace Data {
                     oSQLC.Transaction = oSQLTRAN;
                     oSQLC.Connection = oConnection.oCN;
 
-                    oSQLC.CommandText = "INSERT INTO dbo.Cuestionario(TipoCuestionario, IDUsuario, Titulo, Descripcion, FechaInicio, FechaFinal) VALUES (@TipoCuestionario, @IDUsuario, @Titulo, @Descripcion, @FechaInicio, @FechaFinal);");
+                    oSQLC.CommandText = "INSERT INTO dbo.Cuestionario(TipoCuestionario, IDUsuario, Titulo, Descripcion, FechaInicio, FechaFinal) VALUES (@TipoCuestionario, @IDUsuario, @Titulo, @Descripcion, @FechaInicio, @FechaFinal);";
                     oSQLC.Parameters.AddWithValue("@TipoCuestionario", oCuestionario.TipoCustionario);
                     oSQLC.Parameters.AddWithValue("@IDUsuario", oCuestionario.IDUsuario);
                     oSQLC.Parameters.AddWithValue("@Titulo", oCuestionario.Titulo);
