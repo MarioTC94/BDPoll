@@ -34,7 +34,7 @@ namespace View.Helpers {
             this.btnRemove.Location = new System.Drawing.Point(305, 37);
 
             this.btnRemove.Click += (e, z) => {
-                Forms.AgregarCuestionario.ListPreguntas.Remove(oPregunta);
+                Forms.txtTitulo.ListPreguntas.Remove(oPregunta);
                 pnAgregarCuestionario.Controls.Remove(oPanel);
 
             };
