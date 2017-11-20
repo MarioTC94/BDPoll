@@ -28,6 +28,7 @@ namespace View.Forms {
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion3 });
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion4 });
                 oPregunta.IDTipoPregunta = 2; 
+                /***/
                 ListPreguntas.Add(oPregunta);
                 var p = new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario);
                 this.pnAgregarCuestionario.Controls.Add(p.getPanel("Respuesta Unica", oForm.DescripcionPregunta));
@@ -45,8 +46,8 @@ namespace View.Forms {
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion3 });
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion4 });
                 oPregunta.IDTipoPregunta = 1;
-                this.ListPreguntas.Add(oPregunta);
-                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(this.ListPreguntas).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
+                ListPreguntas.Add(oPregunta);
+                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
             }
         }
 
@@ -56,8 +57,8 @@ namespace View.Forms {
                 Model.Pregunta oPregunta = new Model.Pregunta() {
                     DescripcionPregunta = oForm.DescripcionPregunta,
                 };
-                this.ListPreguntas.Add(oPregunta);
-                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(this.ListPreguntas).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
+                ListPreguntas.Add(oPregunta);
+                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
 
             }
         }
