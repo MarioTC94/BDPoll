@@ -15,6 +15,9 @@ namespace View.Forms {
 
         public AgregarCuestionario() {
             InitializeComponent();
+            foreach( Model.Pregunta item in ListPreguntas ) {
+                pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(item, pnAgregarCuestionario).getPanel(item.TipoPregunta.DescripcionTipoPregunta, item.DescripcionPregunta));
+            }
         }
 
         private void btnRespuestaUnica_Click(object sender, EventArgs e) {
@@ -27,8 +30,8 @@ namespace View.Forms {
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion2 });
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion3 });
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion4 });
-                oPregunta.IDTipoPregunta = 2; 
-                /***/
+                oPregunta.IDTipoPregunta = 2;
+                oPregunta.TipoPregunta = new Model.TipoPregunta() { IDTipoPregunta = 2, DescripcionTipoPregunta = "Respuesta Unica" };
                 ListPreguntas.Add(oPregunta);
                 var p = new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario);
                 this.pnAgregarCuestionario.Controls.Add(p.getPanel("Respuesta Unica", oForm.DescripcionPregunta));
