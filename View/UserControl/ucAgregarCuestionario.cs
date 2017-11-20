@@ -24,6 +24,9 @@ namespace View.UserControl {
                 if( oPreguntas.Any() ) {
                     Model.Cuestionario oCuestionario = new Model.Cuestionario();
                     oCuestionario.Pregunta = oPreguntas;
+                    oCuestionario.TipoCustionario = 1;
+                    oCuestionario.IDUsuario = BusinessLogic.Credenciales.Usuario.NombreUsuario;
+                    oCuestionario.Titulo = "Titulo";
                     this.ListaCuestionarios.Add(oCuestionario);
                 }
             }

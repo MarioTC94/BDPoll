@@ -11,7 +11,7 @@ namespace Model{
     
         public int IDCuestionario { get; set; }
         public int TipoCustionario { get; set; }
-        public int IDUsuario { get; set; }
+        public String IDUsuario { get; set; }
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
         public DateTime FechaInicio { get; set; }
