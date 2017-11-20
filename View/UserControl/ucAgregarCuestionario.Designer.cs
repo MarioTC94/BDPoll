@@ -49,10 +49,11 @@
             // btFacturacion
             // 
             this.btFacturacion.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btFacturacion.Location = new System.Drawing.Point(583, 249);
+            this.btFacturacion.Location = new System.Drawing.Point(533, 205);
             this.btFacturacion.Name = "btFacturacion";
-            this.btFacturacion.Size = new System.Drawing.Size(137, 39);
+            this.btFacturacion.Size = new System.Drawing.Size(125, 39);
             this.btFacturacion.TabIndex = 3;
+            this.btFacturacion.TabStop = false;
             this.btFacturacion.Text = "Pasar a Facturación";
             this.btFacturacion.UseSelectable = true;
             // 
@@ -64,7 +65,7 @@
             this.pnCuestionarios.HorizontalScrollbarSize = 10;
             this.pnCuestionarios.Location = new System.Drawing.Point(0, 0);
             this.pnCuestionarios.Name = "pnCuestionarios";
-            this.pnCuestionarios.Size = new System.Drawing.Size(561, 425);
+            this.pnCuestionarios.Size = new System.Drawing.Size(494, 425);
             this.pnCuestionarios.TabIndex = 2;
             this.pnCuestionarios.VerticalScrollbar = true;
             this.pnCuestionarios.VerticalScrollbarBarColor = true;
@@ -74,10 +75,11 @@
             // btagregarcuestionario
             // 
             this.btagregarcuestionario.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btagregarcuestionario.Location = new System.Drawing.Point(583, 106);
+            this.btagregarcuestionario.Location = new System.Drawing.Point(533, 107);
             this.btagregarcuestionario.Name = "btagregarcuestionario";
-            this.btagregarcuestionario.Size = new System.Drawing.Size(137, 38);
+            this.btagregarcuestionario.Size = new System.Drawing.Size(125, 38);
             this.btagregarcuestionario.TabIndex = 2;
+            this.btagregarcuestionario.TabStop = false;
             this.btagregarcuestionario.Text = "Agregar Cuestionario";
             this.btagregarcuestionario.UseSelectable = true;
             this.btagregarcuestionario.Click += new System.EventHandler(this.btagregarcuestionario_Click);

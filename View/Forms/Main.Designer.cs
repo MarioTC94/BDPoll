@@ -28,29 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnPrincipal = new MetroFramework.Controls.MetroPanel();
             this.pnMain = new MetroFramework.Controls.MetroPanel();
             this.btnPerfil = new MetroFramework.Controls.MetroButton();
             this.btnMisCuestionarios = new MetroFramework.Controls.MetroButton();
             this.btnFacturacion = new MetroFramework.Controls.MetroButton();
             this.btn_ResponderCuestionario = new MetroFramework.Controls.MetroButton();
             this.btnCrearCuestionario = new MetroFramework.Controls.MetroButton();
+            this.pnPrincipal = new MetroFramework.Controls.MetroPanel();
             this.pnMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnPrincipal
-            // 
-            this.pnPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnPrincipal.HorizontalScrollbarBarColor = true;
-            this.pnPrincipal.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnPrincipal.HorizontalScrollbarSize = 10;
-            this.pnPrincipal.Location = new System.Drawing.Point(187, 60);
-            this.pnPrincipal.Name = "pnPrincipal";
-            this.pnPrincipal.Size = new System.Drawing.Size(676, 406);
-            this.pnPrincipal.TabIndex = 1;
-            this.pnPrincipal.VerticalScrollbarBarColor = true;
-            this.pnPrincipal.VerticalScrollbarHighlightOnWheel = false;
-            this.pnPrincipal.VerticalScrollbarSize = 10;
             // 
             // pnMain
             // 
@@ -78,6 +64,7 @@
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.Size = new System.Drawing.Size(167, 56);
             this.btnPerfil.TabIndex = 7;
+            this.btnPerfil.TabStop = false;
             this.btnPerfil.Text = "Mi Perfil";
             this.btnPerfil.UseSelectable = true;
             this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
@@ -89,6 +76,7 @@
             this.btnMisCuestionarios.Name = "btnMisCuestionarios";
             this.btnMisCuestionarios.Size = new System.Drawing.Size(167, 56);
             this.btnMisCuestionarios.TabIndex = 6;
+            this.btnMisCuestionarios.TabStop = false;
             this.btnMisCuestionarios.Text = "Mis Cuestionarios";
             this.btnMisCuestionarios.UseSelectable = true;
             this.btnMisCuestionarios.Click += new System.EventHandler(this.btnMisCuestionarios_Click);
@@ -100,6 +88,7 @@
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Size = new System.Drawing.Size(167, 56);
             this.btnFacturacion.TabIndex = 5;
+            this.btnFacturacion.TabStop = false;
             this.btnFacturacion.Text = "Facturación de Cuestionarios";
             this.btnFacturacion.UseSelectable = true;
             this.btnFacturacion.Click += new System.EventHandler(this.btnFacturacion_Click);
@@ -111,6 +100,7 @@
             this.btn_ResponderCuestionario.Name = "btn_ResponderCuestionario";
             this.btn_ResponderCuestionario.Size = new System.Drawing.Size(167, 56);
             this.btn_ResponderCuestionario.TabIndex = 4;
+            this.btn_ResponderCuestionario.TabStop = false;
             this.btn_ResponderCuestionario.Text = "Responder Cuestionario";
             this.btn_ResponderCuestionario.UseSelectable = true;
             this.btn_ResponderCuestionario.Click += new System.EventHandler(this.btn_ResponderCuestionario_Click);
@@ -122,9 +112,24 @@
             this.btnCrearCuestionario.Name = "btnCrearCuestionario";
             this.btnCrearCuestionario.Size = new System.Drawing.Size(167, 56);
             this.btnCrearCuestionario.TabIndex = 3;
+            this.btnCrearCuestionario.TabStop = false;
             this.btnCrearCuestionario.Text = "Crear Cuestionario";
             this.btnCrearCuestionario.UseSelectable = true;
             this.btnCrearCuestionario.Click += new System.EventHandler(this.btnCrearCuestionario_Click);
+            // 
+            // pnPrincipal
+            // 
+            this.pnPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnPrincipal.HorizontalScrollbarBarColor = true;
+            this.pnPrincipal.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnPrincipal.HorizontalScrollbarSize = 10;
+            this.pnPrincipal.Location = new System.Drawing.Point(187, 60);
+            this.pnPrincipal.Name = "pnPrincipal";
+            this.pnPrincipal.Size = new System.Drawing.Size(676, 406);
+            this.pnPrincipal.TabIndex = 1;
+            this.pnPrincipal.VerticalScrollbarBarColor = true;
+            this.pnPrincipal.VerticalScrollbarHighlightOnWheel = false;
+            this.pnPrincipal.VerticalScrollbarSize = 10;
             // 
             // Main
             // 
@@ -142,11 +147,11 @@
 
         #endregion
         private MetroFramework.Controls.MetroPanel pnMain;
-        private MetroFramework.Controls.MetroPanel pnPrincipal;
         private MetroFramework.Controls.MetroButton btn_ResponderCuestionario;
         private MetroFramework.Controls.MetroButton btnCrearCuestionario;
         private MetroFramework.Controls.MetroButton btnPerfil;
         private MetroFramework.Controls.MetroButton btnMisCuestionarios;
         private MetroFramework.Controls.MetroButton btnFacturacion;
+        private MetroFramework.Controls.MetroPanel pnPrincipal;
     }
 }

@@ -49,7 +49,7 @@ namespace View.Helpers {
             this.btnRemove.Location = new System.Drawing.Point(421, 53);
             this.btnRemove.Click += (x, y) => {
                 oMetroPanel.Controls.Remove(this.oPanel);
-                View.UserControl.ucAgregarCuestionario.ListaCuestionarios.Remove()
+                /*View.UserControl.ucAgregarCuestionario.ListaCuestionarios.Remove();*/
             };
             this.oPanel.Controls.Add(btnRemove);
             this.oPanel.Controls.Add(lbTitulo);
