@@ -17,10 +17,10 @@ namespace View.UserControl {
             InitializeComponent();
         }
 
-        private void metroButton2_Click(object sender, EventArgs e) {
+        private void btagregarcuestionario_Click(object sender, EventArgs e) {
             Forms.AgregarCuestionario oForm = new Forms.AgregarCuestionario();
             if( oForm.ShowDialog(this) == DialogResult.OK) {
-                List<Model.Pregunta> oPreguntas = oForm.ListPreguntas;
+                List<Model.Pregunta> oPreguntas = Forms.AgregarCuestionario.ListPreguntas;
                 if( oPreguntas.Any() ) {
                     Model.Cuestionario oCuestionario = new Model.Cuestionario();
                     oCuestionario.Pregunta = oPreguntas;
@@ -31,5 +31,6 @@ namespace View.UserControl {
                 }
             }
         }
+
     }
 }

@@ -62,5 +62,9 @@ namespace View.Forms {
 
             }
         }
+
+        private void btnSalir_Click(object sender, EventArgs e) {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

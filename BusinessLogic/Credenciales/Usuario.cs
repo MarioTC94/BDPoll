@@ -13,6 +13,7 @@ namespace BusinessLogic.Credenciales {
         public static String IDPersona { get; set; }
         public static String Nombre { get; set; }
         public static String Apellido1 { get; set; }
-        public static String Apellido2 { get; set; }    
+        public static String Apellido2 { get; set; }   
+        
     }
 }

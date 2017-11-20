@@ -49,10 +49,10 @@ namespace View.Helpers {
         }
 
         public MetroPanel getPanel(String TipoPregunta, String Pregunta) {
-            this.lbPregunta.Text = Pregunta;
-            this.lbPregunta.Size = this.lbPregunta.MinimumSize;
+            this.lbPregunta.Text = "Pregunta: " + Pregunta;
+            this.lbPregunta.Size = this.lbPregunta.PreferredSize;
             this.lbTipoPregunta.Text = TipoPregunta;
-            this.lbTipoPregunta.Size = this.lbTipoPregunta.MinimumSize;
+            this.lbTipoPregunta.Size = this.lbTipoPregunta.PreferredSize;
             return this.oPanel;
         }
     }
