@@ -9,12 +9,10 @@ using Model.FunctionModels;
 namespace BusinessLogic {
     public class clsRegistro {
         
-        public Task<bool> AutenticarUsuario(String IDPersona, int TipoPersona, String Nombre, String Apellido1,  String Apellido2, DateTime FechaNac, 
-                                             int Genero, String Email, byte TipoEmail, String Telefono, byte TipoTelefono, String Usuario,
-                                             String Contraseña, int Country, int State, int City, byte TipoDireccion, String NombreDireccion) {
+        public Task<bool> RegistrarUsuario(String IDPersona, int TipoPersona, String Nombre, String Apellido1,  String Apellido2, DateTime FechaNac, int Genero, String Email, byte TipoEmail, String Telefono, byte TipoTelefono, String Usuario, String Contraseña, int Country, int State, int City, byte TipoDireccion, String NombreDireccion) {
 
             return Task.Run(() => {
-                if (String.IsNullOrEmpty(IDPersona)) throw new ArgumentNullException("IDPersona", " La Cédula no puede estar vacía. ");
+                if (String.IsNullOrEmpty(IDPersona)) throw new Exception("Lo sentimos, la cédula no puede estar vacía");
                 if (new Data.clsRegistro().PersonaExiste(IDPersona)) throw new Exception("Lo sentimos, persona ya está registrada.");
                 if (String.IsNullOrEmpty(Nombre)) throw new ArgumentNullException("Nombre", "El Nombre no puede estar vacío.");
                 if (String.IsNullOrEmpty(Apellido1)) throw new ArgumentNullException("Apellido1", "El Apellido 1 no puede estar vacío.");
