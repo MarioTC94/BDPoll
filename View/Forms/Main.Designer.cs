@@ -125,7 +125,7 @@
             this.pnPrincipal.HorizontalScrollbarSize = 10;
             this.pnPrincipal.Location = new System.Drawing.Point(187, 60);
             this.pnPrincipal.Name = "pnPrincipal";
-            this.pnPrincipal.Size = new System.Drawing.Size(676, 406);
+            this.pnPrincipal.Size = new System.Drawing.Size(774, 406);
             this.pnPrincipal.TabIndex = 1;
             this.pnPrincipal.VerticalScrollbarBarColor = true;
             this.pnPrincipal.VerticalScrollbarHighlightOnWheel = false;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 486);
+            this.ClientSize = new System.Drawing.Size(981, 486);
             this.Controls.Add(this.pnPrincipal);
             this.Controls.Add(this.pnMain);
             this.Name = "Main";

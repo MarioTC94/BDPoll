@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View.Forms {
-    public partial class txtTitulo : MetroFramework.Forms.MetroForm {
+    public partial class AgregarCuestionario : MetroFramework.Forms.MetroForm {
 
-        public static List<Model.Pregunta> ListPreguntas;
+        public List<Model.Pregunta> ListPreguntas { get; } //$2
+        public String Titulo { get; set; }
+        public String Descripcion { get; set; }
+        public DateTime FechaFinal { get; set; }
 
-        public txtTitulo() {
+        public AgregarCuestionario() {
             InitializeComponent();
             ListPreguntas = new List<Model.Pregunta>();
         }
@@ -31,8 +34,7 @@ namespace View.Forms {
                 oPregunta.IDTipoPregunta = 2;
                 oPregunta.TipoPregunta = new Model.TipoPregunta() { IDTipoPregunta = 2, DescripcionTipoPregunta = "Respuesta Unica" };
                 ListPreguntas.Add(oPregunta);
-                var p = new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario);
-                this.pnAgregarCuestionario.Controls.Add(p.getPanel("Respuesta Unica", oForm.DescripcionPregunta));
+                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario, this).getPanel("Respuesta Unica", oForm.DescripcionPregunta));
             }
         }
 
@@ -48,7 +50,7 @@ namespace View.Forms {
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion4 });
                 oPregunta.IDTipoPregunta = 1;
                 ListPreguntas.Add(oPregunta);
-                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
+                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario, this).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
             }
         }
 
@@ -59,13 +61,20 @@ namespace View.Forms {
                     DescripcionPregunta = oForm.DescripcionPregunta,
                 };
                 ListPreguntas.Add(oPregunta);
-                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
+                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario, this).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
 
             }
         }
 
         private void btnSalir_Click(object sender, EventArgs e) {
+            this.Titulo = txtTitulo.Text.Trim();
+            this.Descripcion = txtTitulo.Text.Trim();
+            this.FechaFinal = dtpFechaTerminada.Value;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void metroLabel6_Click(object sender, EventArgs e) {
+
         }
     }
 }

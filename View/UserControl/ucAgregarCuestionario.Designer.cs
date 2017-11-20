@@ -25,22 +25,17 @@
         private void InitializeComponent() {
             this.pnAgregarCuestionario = new MetroFramework.Controls.MetroPanel();
             this.btFacturacion = new MetroFramework.Controls.MetroButton();
-            this.pnCuestionarios = new MetroFramework.Controls.MetroPanel();
             this.btagregarcuestionario = new MetroFramework.Controls.MetroButton();
-            this.pnAgregarCuestionario.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnAgregarCuestionario
             // 
-            this.pnAgregarCuestionario.Controls.Add(this.btFacturacion);
-            this.pnAgregarCuestionario.Controls.Add(this.pnCuestionarios);
-            this.pnAgregarCuestionario.Controls.Add(this.btagregarcuestionario);
             this.pnAgregarCuestionario.HorizontalScrollbarBarColor = true;
             this.pnAgregarCuestionario.HorizontalScrollbarHighlightOnWheel = false;
             this.pnAgregarCuestionario.HorizontalScrollbarSize = 10;
             this.pnAgregarCuestionario.Location = new System.Drawing.Point(0, 0);
             this.pnAgregarCuestionario.Name = "pnAgregarCuestionario";
-            this.pnAgregarCuestionario.Size = new System.Drawing.Size(732, 425);
+            this.pnAgregarCuestionario.Size = new System.Drawing.Size(591, 425);
             this.pnAgregarCuestionario.TabIndex = 0;
             this.pnAgregarCuestionario.VerticalScrollbarBarColor = true;
             this.pnAgregarCuestionario.VerticalScrollbarHighlightOnWheel = false;
@@ -49,33 +44,20 @@
             // btFacturacion
             // 
             this.btFacturacion.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btFacturacion.Location = new System.Drawing.Point(533, 205);
+            this.btFacturacion.Location = new System.Drawing.Point(758, 214);
             this.btFacturacion.Name = "btFacturacion";
             this.btFacturacion.Size = new System.Drawing.Size(125, 39);
             this.btFacturacion.TabIndex = 3;
             this.btFacturacion.TabStop = false;
             this.btFacturacion.Text = "Pasar a Facturación";
+            this.btFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btFacturacion.UseSelectable = true;
-            // 
-            // pnCuestionarios
-            // 
-            this.pnCuestionarios.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pnCuestionarios.HorizontalScrollbarBarColor = true;
-            this.pnCuestionarios.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnCuestionarios.HorizontalScrollbarSize = 10;
-            this.pnCuestionarios.Location = new System.Drawing.Point(0, 0);
-            this.pnCuestionarios.Name = "pnCuestionarios";
-            this.pnCuestionarios.Size = new System.Drawing.Size(494, 425);
-            this.pnCuestionarios.TabIndex = 2;
-            this.pnCuestionarios.VerticalScrollbar = true;
-            this.pnCuestionarios.VerticalScrollbarBarColor = true;
-            this.pnCuestionarios.VerticalScrollbarHighlightOnWheel = false;
-            this.pnCuestionarios.VerticalScrollbarSize = 10;
+            this.btFacturacion.Click += new System.EventHandler(this.btFacturacion_Click);
             // 
             // btagregarcuestionario
             // 
             this.btagregarcuestionario.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btagregarcuestionario.Location = new System.Drawing.Point(533, 107);
+            this.btagregarcuestionario.Location = new System.Drawing.Point(758, 156);
             this.btagregarcuestionario.Name = "btagregarcuestionario";
             this.btagregarcuestionario.Size = new System.Drawing.Size(125, 38);
             this.btagregarcuestionario.TabIndex = 2;
@@ -89,9 +71,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnAgregarCuestionario);
+            this.Controls.Add(this.btFacturacion);
+            this.Controls.Add(this.btagregarcuestionario);
             this.Name = "ucAgregarCuestionario";
-            this.Size = new System.Drawing.Size(732, 425);
-            this.pnAgregarCuestionario.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(921, 425);
             this.ResumeLayout(false);
 
         }
@@ -100,7 +83,6 @@
 
         private MetroFramework.Controls.MetroPanel pnAgregarCuestionario;
         private MetroFramework.Controls.MetroButton btFacturacion;
-        private MetroFramework.Controls.MetroPanel pnCuestionarios;
         private MetroFramework.Controls.MetroButton btagregarcuestionario;
     }
 }
