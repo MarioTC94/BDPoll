@@ -87,12 +87,12 @@ namespace Data {
         }
 
         public DataTable PreguntasDeCuestionario(int IDCuestionario) {
-            SqlCommand oSQLC = new SqlCommand("SELECT b.IDPregunta, a.IDTipoPregunta, a.DescripcionTipoPregunta FROM dbo.Pregunta a JOIN dbo.TipoPregunta a ON a.IDTipoPregunta = b.IDTipoPregunta a.Activo = 1 AND a.IDCuestionario = @IDCuestionario");
+            SqlCommand oSQLC = new SqlCommand("SELECT b.IDPregunta, a.DescripcionTipoPregunta, b.DescripcionPregunta FROM dbo.Pregunta a JOIN dbo.TipoPregunta a ON a.IDTipoPregunta = b.IDTipoPregunta a.Activo = 1 AND a.IDCuestionario = @IDCuestionario");
             oSQLC.Parameters.AddWithValue("@IDCuestionario", IDCuestionario);
             return new clsConnection().SelectData(oSQLC);
         }
 
-        public DataTable OpcionesDePregunta(int IDCuestionario, String IDPregunta) {
+        public DataTable OpcionesDePregunta(int IDCuestionario, int IDPregunta) {
             SqlCommand oSQLC = new SqlCommand("SELECT IDOpcion, DescripcionOpcion FROM dbo.Opciones WHERE IDCuestionario = @IDCuestionario AND Activo = 1 AND IDPregunta = @IDPregunta");
             oSQLC.Parameters.AddWithValue("@IDCuestionario", IDCuestionario);
             oSQLC.Parameters.AddWithValue("@IDPregunta", IDPregunta);

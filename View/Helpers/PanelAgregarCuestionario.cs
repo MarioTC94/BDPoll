@@ -16,12 +16,10 @@ namespace View.Helpers {
         private MetroLabel lbTitulo;
         private MetroLabel lbCantPreguntas;
         private MetroLabel lbTotal;
-        private List<Model.Cuestionario> ListCuestionario;
         //-----------------------------------
         private int IDCuestionario;
 
-        public PanelAgregarCuestionario(ref List<Model.Cuestionario> ListCuestionario, int IDCuestionario) {
-            this.IDCuestionario = IDCuestionario;
+        public PanelAgregarCuestionario(Model.Cuestionario cuestionario, MetroPanel oMetroPanel) {
 
             this.lbTitulo = new MetroLabel();
             this.lbTitulo.Text = "Titulo: ";
@@ -52,10 +50,8 @@ namespace View.Helpers {
             this.btnRemove.Size = new System.Drawing.Size(94, 32);
             this.btnRemove.Location = new System.Drawing.Point(533, 46);
             this.btnRemove.Click += (x, y) => {
-              //  this.ListCuestionario.Select(x => x.IDCuestionario = IDCuestionario);
-                this.oPanel.Parent.Controls.Remove(this.oPanel);
+                oMetroPanel.Controls.Remove(this.oPanel);
             };
-
             this.oPanel.Controls.Add(btnRemove);
             this.oPanel.Controls.Add(lbTitulo);
             this.oPanel.Controls.Add(lbCantPreguntas);

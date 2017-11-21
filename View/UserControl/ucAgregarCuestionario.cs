@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace View.UserControl {
     public partial class ucAgregarCuestionario : MetroFramework.Controls.MetroUserControl {
 
-        public List<Model.Cuestionario> ListaCuestionarios { get; set; }
+        public static List<Model.Cuestionario> ListaCuestionarios = new List<Model.Cuestionario>();
 
         public ucAgregarCuestionario() {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace View.UserControl {
                     oCuestionario.TipoCustionario = 1;
                     oCuestionario.IDUsuario = BusinessLogic.Credenciales.Usuario.NombreUsuario;
                     oCuestionario.Titulo = "Titulo";
-                    this.ListaCuestionarios.Add(oCuestionario);
+                    ListaCuestionarios.Add(oCuestionario);
                 }
             }
         }
