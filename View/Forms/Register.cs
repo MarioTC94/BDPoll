@@ -81,9 +81,8 @@ namespace View.Forms {
         private void Btn_Salir_Click(object sender, EventArgs e) {
 
             if (MetroFramework.MetroMessageBox.Show(this, "Estás seguro que deseas salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-                this.Hide();
-                Login LG = new Login();
-                LG.ShowDialog();
+                this.Dispose();
+                this.Parent.Show();
             }
         }
 

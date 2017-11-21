@@ -37,7 +37,14 @@ namespace View.UserControl {
         }
 
         private void btFacturacion_Click(object sender, EventArgs e) {
+            try {
+                if( new BusinessLogic.Cuestionario().InsertarCuestionario() ) {
 
+                }
+            }
+            catch( Exception ex) {
+                MetroFramework.MetroMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
