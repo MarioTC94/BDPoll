@@ -36,10 +36,10 @@ namespace View.UserControl {
             }
         }
 
-        private void btFacturacion_Click(object sender, EventArgs e) {
+        private async void btFacturacion_Click(object sender, EventArgs e) {
             try {
-                if( new BusinessLogic.Cuestionario().InsertarCuestionario() ) {
-
+                if( await new BusinessLogic.Cuestionario().InsertarCuestionario(ListaCuestionarios) ) {
+                    MetroFramework.MetroMessageBox.Show(this, "Se insetó correctament los cuestionarios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch( Exception ex) {
