@@ -55,6 +55,7 @@
             this.btFacturacion.TabIndex = 3;
             this.btFacturacion.Text = "Pasar a Facturación";
             this.btFacturacion.UseSelectable = true;
+            this.btFacturacion.Click += new System.EventHandler(this.btFacturacion_Click);
             // 
             // pnCuestionarios
             // 

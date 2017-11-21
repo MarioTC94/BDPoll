@@ -19,9 +19,11 @@ namespace View.Helpers {
         private MetroLabel lbPregunta;
         private MetroLabel lbTipoPregunta;
         private Model.Pregunta oPregunta;
+        private Forms.AgregarCuestionario FormWithList;
 
-        public PanelAgregarPregunta(Model.Pregunta oPregunta, MetroPanel pnAgregarCuestionario) {
+        public PanelAgregarPregunta(Model.Pregunta oPregunta, MetroPanel pnAgregarCuestionario, Forms.AgregarCuestionario agregarCuestionario) {
             this.oPregunta = oPregunta;
+            this.FormWithList = agregarCuestionario;
 
             this.lbPregunta = new MetroLabel();
             this.lbPregunta.Location = new System.Drawing.Point(12, 16);
@@ -35,7 +37,7 @@ namespace View.Helpers {
             this.btnRemove.Location = new System.Drawing.Point(318, 34);
 
             this.btnRemove.Click += (e, z) => {
-                Forms.txtTitulo.ListPreguntas.Remove(oPregunta);
+                agregarCuestionario.ListPreguntas.Remove(oPregunta);
                 pnAgregarCuestionario.Controls.Remove(oPanel);
 
             };

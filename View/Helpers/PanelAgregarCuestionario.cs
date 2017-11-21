@@ -17,9 +17,13 @@ namespace View.Helpers {
         private MetroLabel lbCantPreguntas;
         private MetroLabel lbTotal;
         //-----------------------------------
-        private Model.Cuestionario IDCuestionario;
+        private Model.Cuestionario oCuestionario;
+        private UserControl.ucAgregarCuestionario FormWithList;
 
-        public PanelAgregarCuestionario(Model.Cuestionario cuestionario, MetroPanel oMetroPanel) {
+        public PanelAgregarCuestionario(Model.Cuestionario cuestionario, MetroPanel oMetroPanel, UserControl.ucAgregarCuestionario FormWithList) {
+
+            this.FormWithList = FormWithList;
+            this.oCuestionario = cuestionario;
 
             this.lbTitulo = new MetroLabel();
             this.lbTitulo.Text = "Titulo: ";
@@ -49,12 +53,25 @@ namespace View.Helpers {
             this.btnRemove.Location = new System.Drawing.Point(421, 53);
             this.btnRemove.Click += (x, y) => {
                 oMetroPanel.Controls.Remove(this.oPanel);
-                View.UserControl.ucAgregarCuestionario.ListaCuestionarios.Remove()
+                FormWithList.ListaCuestionarios.Remove(oCuestionario);
             };
             this.oPanel.Controls.Add(btnRemove);
             this.oPanel.Controls.Add(lbTitulo);
             this.oPanel.Controls.Add(lbCantPreguntas);
             this.oPanel.Controls.Add(lbTotal);
+        }
+
+        public MetroPanel getPanel(String Titulo, String CantidadPreguntas, String Total) {
+            lbTitulo.Text += Titulo;
+            lbTitulo.Size = lbTitulo.PreferredSize;
+
+            lbCantPreguntas.Text += CantidadPreguntas;
+            lbCantPreguntas.Size = lbCantPreguntas.PreferredSize;
+
+            lbTotal.Text += Total;
+            lbTotal.Size = lbTotal.PreferredSize;
+
+            return this.oPanel;
         }
        
     }
