@@ -18,9 +18,9 @@ namespace View.UserControl {
         }
 
         private void btagregarcuestionario_Click(object sender, EventArgs e) {
-            Forms.AgregarCuestionario oForm = new Forms.AgregarCuestionario();
+            Forms.txtTitulo oForm = new Forms.txtTitulo();
             if( oForm.ShowDialog(this) == DialogResult.OK) {
-                List<Model.Pregunta> oPreguntas = Forms.AgregarCuestionario.ListPreguntas;
+                List<Model.Pregunta> oPreguntas = Forms.txtTitulo.ListPreguntas;
                 if( oPreguntas.Any() ) {
                     Model.Cuestionario oCuestionario = new Model.Cuestionario();
                     oCuestionario.Pregunta = oPreguntas;

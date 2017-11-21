@@ -9,15 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View.Forms {
-    public partial class AgregarCuestionario : MetroFramework.Forms.MetroForm {
+    public partial class txtTitulo : MetroFramework.Forms.MetroForm {
 
-        public static List<Model.Pregunta> ListPreguntas = new List<Model.Pregunta>();
+        public static List<Model.Pregunta> ListPreguntas;
 
-        public AgregarCuestionario() {
+        public txtTitulo() {
             InitializeComponent();
-            foreach( Model.Pregunta item in ListPreguntas ) {
-                pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(item, pnAgregarCuestionario).getPanel(item.TipoPregunta.DescripcionTipoPregunta, item.DescripcionPregunta));
-            }
+            ListPreguntas = new List<Model.Pregunta>();
         }
 
         private void btnRespuestaUnica_Click(object sender, EventArgs e) {

@@ -89,7 +89,7 @@ namespace View.Forms {
 
         private async void Btn_Aceptar_Click(object sender, EventArgs e) {
             try {
-                if (await new clsRegistro().AutenticarUsuario (Txt_Cedula.Text.Trim(), (int) CB_TipoPersona.SelectedValue,
+                if (await new clsRegistro().RegistrarUsuario (Txt_Cedula.Text.Trim(), (int) CB_TipoPersona.SelectedValue,
                     Txt_Nombre.Text.Trim(), Txt_Apellido1.Text.Trim(), Txt_Apellido2.Text.Trim(), (DateTime) Dtp_FechaNacimiento.Value,
                     (int) CB_Genero.SelectedValue, Txt_Email.Text.Trim(), (byte) CB_TipoEmail.SelectedValue, Txt_Telefono.Text.Trim(),
                     (byte) CB_TipoTelefono.SelectedValue, Txt_Usuario.Text.Trim(), Txt_Contraseña.Text.Trim(), (int) CB_Country.SelectedValue,
