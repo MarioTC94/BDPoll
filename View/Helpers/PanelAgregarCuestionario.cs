@@ -17,40 +17,39 @@ namespace View.Helpers {
         private MetroLabel lbCantPreguntas;
         private MetroLabel lbTotal;
         //-----------------------------------
-        private int IDCuestionario;
+        private Model.Cuestionario IDCuestionario;
 
         public PanelAgregarCuestionario(Model.Cuestionario cuestionario, MetroPanel oMetroPanel) {
 
             this.lbTitulo = new MetroLabel();
             this.lbTitulo.Text = "Titulo: ";
-            this.lbTitulo.Size = this.lbTitulo.MinimumSize;
-            this.lbTitulo.Location = new System.Drawing.Point(16, 15);
+            this.lbTitulo.Location = new System.Drawing.Point(31, 24);
 
             this.lbCantPreguntas = new MetroLabel();
             this.lbCantPreguntas.Text = "Cantidad de preguntas: ";
-            this.lbCantPreguntas.Size = this.lbCantPreguntas.MinimumSize;
-            this.lbCantPreguntas.Location = new System.Drawing.Point(16, 46);
+            this.lbCantPreguntas.Location = new System.Drawing.Point(31, 57);
 
             this.lbTotal = new MetroLabel();
             this.lbTotal.Text = "Total: $";
-            this.lbTotal.Size = this.lbTotal.MinimumSize;
-            this.lbTotal.Location = new System.Drawing.Point(16, 82);
+            this.lbTotal.Location = new System.Drawing.Point(31, 88);
 
             this.oPanel = new MetroPanel();
             this.oPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.oPanel.Height = 113;
+            this.oPanel.Height = 130;
 
             this.oBar = new MetroPanel();
-            this.oBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.oBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.oBar.Height = 5;
             this.oBar.BackColor = MetroColors.Blue;
+            this.oPanel.Controls.Add(oBar);
 
             this.btnRemove = new MetroButton();
             this.btnRemove.Text = "Remover";
-            this.btnRemove.Size = new System.Drawing.Size(94, 32);
-            this.btnRemove.Location = new System.Drawing.Point(533, 46);
+            this.btnRemove.Size = this.btnRemove.PreferredSize;
+            this.btnRemove.Location = new System.Drawing.Point(421, 53);
             this.btnRemove.Click += (x, y) => {
                 oMetroPanel.Controls.Remove(this.oPanel);
+                View.UserControl.ucAgregarCuestionario.ListaCuestionarios.Remove()
             };
             this.oPanel.Controls.Add(btnRemove);
             this.oPanel.Controls.Add(lbTitulo);
