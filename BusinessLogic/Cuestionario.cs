@@ -17,15 +17,15 @@ namespace BusinessLogic {
             });
         }
 
-        public Task<List<Model.Cuestionario>> CuestionarioParaContestar() {
+        public Task<DataTable> CuestionarioParaContestar() {
             return Task.Run(() => {
-                return getListCustionarios(new Data.clsCuestionario().CuestionariosParaContestar(Credenciales.Usuario.NombreUsuario, DateTime.Now));
+                return new Data.clsCuestionario().CuestionariosParaContestar(Credenciales.Usuario.NombreUsuario, DateTime.Now);
             });
         }
 
-        public Task<List<Model.Cuestionario>> MisCuestionarios() {
+        public Task<DataTable> MisCuestionarios() {
             return Task.Run(() => {
-                return getListCustionarios(new Data.clsCuestionario().MisCuestionarios(Credenciales.Usuario.NombreUsuario));
+                return new Data.clsCuestionario().MisCuestionarios(Credenciales.Usuario.NombreUsuario);
             });
         }
 
@@ -63,6 +63,7 @@ namespace BusinessLogic {
                             DescripcionOpcion = (String) RowCuestionario["DescripcionOpcion"]
                         };
                     }
+
                 }
 
                 ListCuestionarios.Add(oCuestionario);

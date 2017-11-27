@@ -34,17 +34,13 @@ namespace View.Forms {
             this.ucIni = new ucInicio();
             this.ucIni.Dock = DockStyle.Fill;
 
-            this.ucMisC = new ucMiscuestionarios();
-            this.ucMisC.Dock = DockStyle.Fill;
-
             this.ucPerf = new ucPerfil();
             this.ucPerf.Dock = DockStyle.Fill;
 
-            this.pnPrincipal.Controls.Add(ucCC);
-            this.pnPrincipal.Controls.Add(ucFA);
-            this.pnPrincipal.Controls.Add(ucIni);
-            this.pnPrincipal.Controls.Add(ucMisC);
-            this.pnPrincipal.Controls.Add(ucPerf);
+            this.panelmain.Controls.Add(ucCC);
+            this.panelmain.Controls.Add(ucFA);
+            this.panelmain.Controls.Add(ucIni);
+            this.panelmain.Controls.Add(ucPerf);
 
             this.ucCC.BringToFront();
 
@@ -55,7 +51,11 @@ namespace View.Forms {
             this.ucPerf.BringToFront();
         }
 
-        private void btnMisCuestionarios_Click(object sender, EventArgs e) {
+        private async void btnMisCuestionarios_Click(object sender, EventArgs e) {
+            DataTable oDT = await new BusinessLogic.Cuestionario().MisCuestionarios();
+            this.ucMisC = new ucMiscuestionarios(oDT);
+            this.ucMisC.Dock = DockStyle.Fill;
+            this.panelmain.Controls.Add(ucMisC);
             this.ucMisC.BringToFront();
         }
 
@@ -69,7 +69,19 @@ namespace View.Forms {
         }
 
         private void btn_ResponderCuestionario_Click(object sender, EventArgs e) {
+
             this.ucIni.BringToFront();
+        }
+
+        private void btncerrarsesion_Click(object sender, EventArgs e) {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OpenLoginForm)); /* Crea un hilo para realizar un proceso de salida e inicio de sesión*/
+            t.Start();
+            this.Close();
+        }
+        public static void OpenLoginForm() {
+            if (new Login().ShowDialog() == DialogResult.OK) {
+                Application.Run(new Main());
+            }
         }
     }
 }

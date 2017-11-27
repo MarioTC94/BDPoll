@@ -15,16 +15,21 @@ namespace BusinessLogic {
             byte[] getpassword = new Data.Login().getPassword(Usuario);
             if (hash.SequenceEqual(getpassword)) {
                 Model.FunctionModels.Usuario oUser = new Data.Login().getUserData(Usuario);
-                Credenciales.Usuario.Nombre = oUser.Nombre;
-                Credenciales.Usuario.Apellido1 = oUser.Apellido1;
-                Credenciales.Usuario.Apellido2 = oUser.Apellido2;
-                Credenciales.Usuario.IDPersona = oUser.IDPersona;
-                Credenciales.Usuario.IDTipoPersona = oUser.IDTipoPersona;
-                Credenciales.Usuario.NombreUsuario = oUser.NombreUsuario;
+                GuardarCredenciales(oUser.Nombre, oUser.Apellido1, oUser.Apellido2, oUser.IDPersona, oUser.IDTipoPersona, oUser.NombreUsuario);
                 return true;
             }
             return false;
 
+        }
+
+        public static void GuardarCredenciales(String Nombre, String Apellido1, String Apellido2, String IDPersona, int IDTipoPersona, String NombreUsuario) {
+
+            Credenciales.Usuario.Nombre = Nombre;
+            Credenciales.Usuario.Apellido1 =Apellido1;
+            Credenciales.Usuario.Apellido2 = Apellido2;
+            Credenciales.Usuario.IDPersona = IDPersona;
+            Credenciales.Usuario.IDTipoPersona = IDTipoPersona;
+            Credenciales.Usuario.NombreUsuario = NombreUsuario;
         }
 
 

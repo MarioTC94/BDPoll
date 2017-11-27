@@ -17,15 +17,15 @@ namespace Data {
                 try {
                     SqlCommand oSQLC = new SqlCommand("");
 
-                    oSQLC.Transaction = oSQLTRAN;
                     oSQLC.Connection = oConnection.oCN;
+                    oSQLC.Transaction = oSQLTRAN;
 
                     foreach( var oCuestionario in oListCuestionario ) {
-                        oSQLC.CommandText += "INSERT INTO dbo.Cuestionario(TipoCuestionario, IDUsuario, Titulo, Descripcion, FechaInicio, FechaFinal) VALUES (@TipoCuestionario, @IDUsuario, @Titulo, @Descripcion, @FechaInicio, @FechaFinal); ";
+                        oSQLC.CommandText = "INSERT INTO dbo.Cuestionario(TipoCuestionario, IDUsuario, Titulo, Descripcion, FechaInicio, FechaFinal) VALUES (@TipoCuestionario, @IDUsuario, @Titulo, @Descripcion, @FechaInicio, @FechaFinal); ";
                         oSQLC.Parameters.AddWithValue("@TipoCuestionario", oCuestionario.TipoCustionario);
                         oSQLC.Parameters.AddWithValue("@IDUsuario", oCuestionario.IDUsuario);
                         oSQLC.Parameters.AddWithValue("@Titulo", oCuestionario.Titulo);
-                        oSQLC.Parameters.AddWithValue("@Descripcion", oCuestionario.IDUsuario);
+                        oSQLC.Parameters.AddWithValue("@Descripcion", oCuestionario.Descripcion);
                         oSQLC.Parameters.AddWithValue("@FechaInicio", oCuestionario.FechaInicio);
                         oSQLC.Parameters.AddWithValue("@FechaFinal", oCuestionario.FechaFinal);
                         oSQLC.ExecuteNonQuery();
@@ -34,31 +34,25 @@ namespace Data {
 
                         //******************************************************************************************************************************************************/
 
-
-                        SqlDataReader oSQLDA = oConnection.SelectUniqueData(new SqlCommand("SELECT IDENT_CURRENT('Cuestionario') AS IDCuestionario"));
-
-                        if( oSQLDA == null ) { return false; }
-
-                        int IDCuestionario = (int) oSQLDA["IDCuestionario"];
-
                         List<Model.Pregunta> ListPregunta = oCuestionario.Pregunta.ToList();
-                        for( int i = 0; i < ListPregunta.Count; i++ ) {
-                            oSQLC.CommandText = "INSERT INTO dbo.Pregunta(IDPregunta, IDTipoPregunta, IDCuestionario, DescripcionPregunta) VALUES (@IDPregunta, @IDTipoPregunta, @IDCuestionario, @DescripcionPregunta); ";
+                        for( 
+                            
+                            
+                            int i = 0; i < ListPregunta.Count; i++ ) {
+                            oSQLC.CommandText = "INSERT INTO dbo.Pregunta(IDPregunta, IDTipoPregunta, IDCuestionario, DescripcionPregunta) VALUES (@IDPregunta, @IDTipoPregunta, @@IDENTITY, @DescripcionPregunta); ";
                             oSQLC.Parameters.AddWithValue("@IDPregunta", ( i + 1 ));
                             oSQLC.Parameters.AddWithValue("@IDTipoPregunta", ListPregunta[i].IDTipoPregunta);
                             oSQLC.Parameters.AddWithValue("@DescripcionPregunta", ListPregunta[i].DescripcionPregunta);
-                            oSQLC.Parameters.AddWithValue("@IDCuestionario", IDCuestionario);
-                            oConnection.CMD(oSQLC);
+                            oSQLC.ExecuteNonQuery();
                             oSQLC.Parameters.Clear();
 
                             List<Model.Opciones> ListaOpciones = ListPregunta[i].Opciones.ToList();
-                            for( int j = 0; j < ListPregunta.Count; j++ ) {
-                                oSQLC.CommandText += "INSERT INTO dbo.Opciones(IDOpcion, IDCuestionario, IDPregunta, DescripcionOpcion) VALUES(@IDOpcion, @IDCuestionario, @IDPregunta, @DescripcionOpcion); ";
+                            for( int j = 0; j < ListaOpciones.Count; j++ ) {
+                                oSQLC.CommandText = "INSERT INTO dbo.Opciones(IDOpcion, IDCuestionario, IDPregunta, DescripcionOpcion) VALUES(@IDOpcion, @@IDENTITY, @IDPregunta, @DescripcionOpcion); ";
                                 oSQLC.Parameters.AddWithValue("@IDOpcion", ( j + 1 ));
-                                oSQLC.Parameters.AddWithValue("IDCuestionario", IDCuestionario);
-                                oSQLC.Parameters.AddWithValue("IDPregunta", ( i + 1 ));
-                                oSQLC.Parameters.AddWithValue("DescripcionOpcion", ListaOpciones[j].DescripcionOpcion);
-                                oConnection.CMD(oSQLC);
+                                oSQLC.Parameters.AddWithValue("@IDPregunta", ( i + 1 ));
+                                oSQLC.Parameters.AddWithValue("@DescripcionOpcion", ListaOpciones[j].DescripcionOpcion);
+                                oSQLC.ExecuteNonQuery();
                                 oSQLC.Parameters.Clear();
                             }
                         }
@@ -77,13 +71,45 @@ namespace Data {
         }
 
         public DataTable CuestionariosParaContestar(String UsuarioLogueado, DateTime FechaActual) {
-            SqlCommand oSQLC = new SqlCommand("SELECT IDCuestionario, Titulo, Descripcion, FechaInicio, FechaFinal, IDUsuario FROM dbo.Cuestionario WHERE Activo = 1 AND IDUsuario != @Usuario AND FechaFinal >= @FechaActual; ");
+            SqlCommand oSQLC = new SqlCommand(@"SELECT 
+	                                                a.IDCuestionario,
+	                                                b.IDPregunta,
+                                                    c.IDOpcion,
+	                                                a.Titulo, 
+	                                                a.Descripcion,
+	                                                a.FechaInicio,
+	                                                a.FechaFinal,
+	                                                b.DescripcionPregunta, 
+	                                                d.DescripcionTipoPregunta,
+	                                                c.DescripcionOpcion
+                                                FROM Cuestionario A 
+                                                JOIN Pregunta B ON A.IDCuestionario  = B.IDCuestionario 
+                                                LEFT JOIN Opciones C ON B.IDCuestionario = C.IDCuestionario AND B.IDPregunta = C.IDPregunta
+                                                JOIN TipoPregunta D ON D.IDTipoPregunta = B.IDTipoPregunta
+                                                WHERE a.IDUsuario <> @Usuario AND (a.FechaFinal > GETDATE());");
+
             oSQLC.Parameters.AddWithValue("@Usuario", UsuarioLogueado);
             return new clsConnection().SelectData(oSQLC);
         }
 
         public DataTable MisCuestionarios(String UsuarioLogueado) {
-            SqlCommand oSQLC = new SqlCommand("SELECT IDCuestionario, Titulo, Descripcion, FechaInicio, FechaFinal FROM dbo.Cuestionario WHERE Activo = 1 AND IDUsuario = @Usuario;  ");
+            SqlCommand oSQLC = new SqlCommand(@"SELECT
+                                                a.IDCuestionario,
+                                                b.IDPregunta,
+                                                c.IDOpcion,
+                                                a.Titulo,
+                                                a.Descripcion,
+                                                a.FechaInicio,
+                                                a.FechaFinal,
+                                                b.DescripcionPregunta,
+                                                d.IDTipoPregunta,
+                                                c.DescripcionOpcion
+                                            FROM Cuestionario A
+                                            JOIN Pregunta B ON A.IDCuestionario = B.IDCuestionario
+                                            LEFT JOIN Opciones C ON B.IDCuestionario = C.IDCuestionario AND B.IDPregunta = C.IDPregunta
+                                            JOIN TipoPregunta D ON D.IDTipoPregunta = B.IDTipoPregunta
+                                            WHERE a.IDUsuario = @Usuario;");
+
             oSQLC.Parameters.AddWithValue("@Usuario", UsuarioLogueado);
             return new clsConnection().SelectData(oSQLC);
         }
@@ -100,5 +126,6 @@ namespace Data {
             oSQLC.Parameters.AddWithValue("@IDPregunta", IDPregunta);
             return new clsConnection().SelectData(oSQLC);
         }
+
     }
 }

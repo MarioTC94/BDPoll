@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.pnAgregarCuestionario = new MetroFramework.Controls.MetroPanel();
+            this.pnAgregarCuestionario = new System.Windows.Forms.Panel();
             this.btnRespuestaUnica = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnRespuestaMultiple = new MetroFramework.Controls.MetroButton();
@@ -36,25 +36,17 @@
             this.lbDetalle = new MetroFramework.Controls.MetroLabel();
             this.txtDescripcion = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // pnAgregarCuestionario
             // 
             this.pnAgregarCuestionario.AutoScroll = true;
             this.pnAgregarCuestionario.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnAgregarCuestionario.HorizontalScrollbar = true;
-            this.pnAgregarCuestionario.HorizontalScrollbarBarColor = true;
-            this.pnAgregarCuestionario.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnAgregarCuestionario.HorizontalScrollbarSize = 10;
             this.pnAgregarCuestionario.Location = new System.Drawing.Point(20, 60);
             this.pnAgregarCuestionario.Name = "pnAgregarCuestionario";
             this.pnAgregarCuestionario.Size = new System.Drawing.Size(424, 421);
             this.pnAgregarCuestionario.TabIndex = 0;
-            this.pnAgregarCuestionario.VerticalScrollbar = true;
-            this.pnAgregarCuestionario.VerticalScrollbarBarColor = true;
-            this.pnAgregarCuestionario.VerticalScrollbarHighlightOnWheel = false;
-            this.pnAgregarCuestionario.VerticalScrollbarSize = 10;
+            this.pnAgregarCuestionario.BackColor = System.Drawing.Color.Transparent;
             // 
             // btnRespuestaUnica
             // 
@@ -224,23 +216,11 @@
             this.metroLabel5.TabIndex = 15;
             this.metroLabel5.Text = "Descripción";
             // 
-            // metroLabel6
-            // 
-            this.metroLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.Location = new System.Drawing.Point(472, 412);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(46, 25);
-            this.metroLabel6.TabIndex = 17;
-            this.metroLabel6.Text = "Total";
-            // 
             // AgregarCuestionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 501);
-            this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.lbDetalle);
@@ -264,7 +244,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroPanel pnAgregarCuestionario;
+        private System.Windows.Forms.Panel pnAgregarCuestionario;
         private MetroFramework.Controls.MetroButton btnRespuestaUnica;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnRespuestaMultiple;
@@ -277,6 +257,5 @@
         private MetroFramework.Controls.MetroLabel lbDetalle;
         private MetroFramework.Controls.MetroTextBox txtDescripcion;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }

@@ -7,8 +7,6 @@ namespace View.Forms{
 
     public partial class Login : MetroForm {
 
-        private Register RG = new Register();
-
         public Login() {
             InitializeComponent();
         }
@@ -32,8 +30,9 @@ namespace View.Forms{
         #endregion
 
         private void Btn_Registrarse_Click(object sender, EventArgs e) {
-            this.Hide();
-            RG.ShowDialog(this);
+           if(new Register().ShowDialog() == DialogResult.OK) {
+                this.DialogResult = DialogResult.OK;
+            }
 
     }
 

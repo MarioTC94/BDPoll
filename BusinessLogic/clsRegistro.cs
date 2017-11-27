@@ -51,7 +51,12 @@ namespace BusinessLogic {
                     Salt = Salt,
                     NombreDireccion = NombreDireccion
                 };
-                return new Data.clsRegistro().Registrar(oRegister);
+                bool RegisterResult = new Data.clsRegistro().Registrar(oRegister);
+                if (RegisterResult) {
+                    Login.GuardarCredenciales(oRegister.Nombre, oRegister.Apellido1, oRegister.Apellido2, oRegister.IDPersona, oRegister.IDTipoPersona, oRegister.NombreUsuario);
+                    return true;
+                }
+                return false;
             });
         }
     }

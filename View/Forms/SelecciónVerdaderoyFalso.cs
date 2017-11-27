@@ -22,7 +22,7 @@ namespace View.Forms {
                 this.DescripcionPregunta = this.txtpregunta.Text.Trim();
                 this.DialogResult = DialogResult.OK;
             } else {
-                MetroFramework.MetroMessageBox.Show(this, "Coma mierda");
+                MetroFramework.MetroMessageBox.Show(this, "Escriba la pregunta");
             }
         }
 

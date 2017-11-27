@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
+using System.Windows.Forms;
 
 namespace View.Helpers {
 
-    public class PanelAgregarPregunta {
+    public class PanelAgregarPregunta {    
 
-        
-
-        public MetroPanel oPanel;
+        public Panel oPanel;
         private MetroPanel oBar;
         private MetroButton btnRemove;
         private MetroLabel lbPregunta;
@@ -21,7 +20,7 @@ namespace View.Helpers {
         private Model.Pregunta oPregunta;
         private Forms.AgregarCuestionario FormWithList;
 
-        public PanelAgregarPregunta(Model.Pregunta oPregunta, MetroPanel pnAgregarCuestionario, Forms.AgregarCuestionario agregarCuestionario) {
+        public PanelAgregarPregunta(Model.Pregunta oPregunta, Panel pnAgregarCuestionario, Forms.AgregarCuestionario agregarCuestionario) {
             this.oPregunta = oPregunta;
             this.FormWithList = agregarCuestionario;
 
@@ -42,13 +41,14 @@ namespace View.Helpers {
 
             };
 
-            this.oPanel = new MetroPanel();
+            this.oPanel = new Panel();
             this.oPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.oPanel.Height = 105;
 
             this.oBar = new MetroPanel();
             this.oBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.oBar.Height = 5;
+            this.oBar.UseCustomBackColor = true;
             this.oBar.BackColor = MetroColors.Blue;
             this.oPanel.Controls.Add(oBar);
 
@@ -57,7 +57,7 @@ namespace View.Helpers {
             this.oPanel.Controls.Add(btnRemove);
         }
 
-        public MetroPanel getPanel(String TipoPregunta, String Pregunta) {
+        public Panel getPanel(String TipoPregunta, String Pregunta) {
             this.lbPregunta.Text = "Pregunta: " + Pregunta;
             this.lbPregunta.Size = this.lbPregunta.PreferredSize;
             this.lbTipoPregunta.Text = TipoPregunta;

@@ -6,26 +6,21 @@ using System.Threading.Tasks;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
-using System.Windows.Forms;
+using System.Data;
 
 namespace View.Helpers {
-    public class PanelAgregarCuestionario {
+
+   public  class PanelMisCuestionarios {
 
         private MetroPanel oPanel;
         private MetroPanel oBar;
-        private MetroButton btnRemove;
+        private MetroButton btnVerDetalle;
         private MetroLabel lbTitulo;
         private MetroLabel lbCantPreguntas;
         private MetroLabel lbTotal;
         //-----------------------------------
-        private Model.Cuestionario oCuestionario;
-        private UserControl.ucAgregarCuestionario FormWithList;
 
-        public PanelAgregarCuestionario(Model.Cuestionario cuestionario, Panel oMetroPanel, UserControl.ucAgregarCuestionario FormWithList) {
-
-            this.FormWithList = FormWithList;
-            this.oCuestionario = cuestionario;
-
+        public PanelMisCuestionarios(List<DataRow> ListPreguntas) {
             this.lbTitulo = new MetroLabel();
             this.lbTitulo.Text = "Título: ";
             this.lbTitulo.Location = new System.Drawing.Point(31, 24);
@@ -49,15 +44,14 @@ namespace View.Helpers {
             this.oBar.BackColor = MetroColors.Blue;
             this.oPanel.Controls.Add(oBar);
 
-            this.btnRemove = new MetroButton();
-            this.btnRemove.Text = "Remover";
-            this.btnRemove.Size = this.btnRemove.PreferredSize;
-            this.btnRemove.Location = new System.Drawing.Point(421, 53);
-            this.btnRemove.Click += (x, y) => {
-                oMetroPanel.Controls.Remove(this.oPanel);
-                FormWithList.ListaCuestionarios.Remove(oCuestionario);
+            this.btnVerDetalle = new MetroButton();
+            this.btnVerDetalle.Text = "Ver Detalles";
+            this.btnVerDetalle.Size = this.btnVerDetalle.PreferredSize;
+            this.btnVerDetalle.Location = new System.Drawing.Point(421, 53);
+            this.btnVerDetalle.Click += (x, y) => {
+                new Forms.DetalleMisCuestionarios(ListPreguntas).ShowDialog();
             };
-            this.oPanel.Controls.Add(btnRemove);
+            this.oPanel.Controls.Add(btnVerDetalle);
             this.oPanel.Controls.Add(lbTitulo);
             this.oPanel.Controls.Add(lbCantPreguntas);
             this.oPanel.Controls.Add(lbTotal);
@@ -75,6 +69,5 @@ namespace View.Helpers {
 
             return this.oPanel;
         }
-       
     }
 }

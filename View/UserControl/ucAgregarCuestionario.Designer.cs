@@ -23,23 +23,17 @@
         /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent() {
-            this.pnAgregarCuestionario = new MetroFramework.Controls.MetroPanel();
+            this.pnAgregarCuestionario = new System.Windows.Forms.Panel();
             this.btFacturacion = new MetroFramework.Controls.MetroButton();
             this.btagregarcuestionario = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // pnAgregarCuestionario
             // 
-            this.pnAgregarCuestionario.HorizontalScrollbarBarColor = true;
-            this.pnAgregarCuestionario.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnAgregarCuestionario.HorizontalScrollbarSize = 10;
             this.pnAgregarCuestionario.Location = new System.Drawing.Point(0, 0);
             this.pnAgregarCuestionario.Name = "pnAgregarCuestionario";
             this.pnAgregarCuestionario.Size = new System.Drawing.Size(591, 425);
-            this.pnAgregarCuestionario.TabIndex = 0;
-            this.pnAgregarCuestionario.VerticalScrollbarBarColor = true;
-            this.pnAgregarCuestionario.VerticalScrollbarHighlightOnWheel = false;
-            this.pnAgregarCuestionario.VerticalScrollbarSize = 10;
+            this.pnAgregarCuestionario.BackColor = System.Drawing.Color.Transparent;
             // 
             // btFacturacion
             // 
@@ -81,7 +75,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroPanel pnAgregarCuestionario;
+        private System.Windows.Forms.Panel pnAgregarCuestionario;
         private MetroFramework.Controls.MetroButton btFacturacion;
         private MetroFramework.Controls.MetroButton btagregarcuestionario;
     }

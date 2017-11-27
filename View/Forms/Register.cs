@@ -81,8 +81,7 @@ namespace View.Forms {
         private void Btn_Salir_Click(object sender, EventArgs e) {
 
             if (MetroFramework.MetroMessageBox.Show(this, "Estás seguro que deseas salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-                this.Dispose();
-                this.Parent.Show();
+                this.Close();
             }
         }
 
@@ -96,8 +95,9 @@ namespace View.Forms {
                     Txt_DireccionExacta.Text.Trim())) {
 
                     MetroFramework.MetroMessageBox.Show(this, "Cliente Registrado Correctamente..", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ( (MetroForm) Parent ).DialogResult = DialogResult.OK;
-                    this.Dispose();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
                 } else {
                     MetroFramework.MetroMessageBox.Show(this, "No se pudo registrar sus datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

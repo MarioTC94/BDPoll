@@ -24,10 +24,13 @@
         /// </summary>
         private void InitializeComponent() {
             this.pnmisCuestionarios = new MetroFramework.Controls.MetroPanel();
+            this.pnMain = new System.Windows.Forms.Panel();
+            this.pnmisCuestionarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnmisCuestionarios
             // 
+            this.pnmisCuestionarios.Controls.Add(this.pnMain);
             this.pnmisCuestionarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnmisCuestionarios.HorizontalScrollbarBarColor = true;
             this.pnmisCuestionarios.HorizontalScrollbarHighlightOnWheel = false;
@@ -40,6 +43,15 @@
             this.pnmisCuestionarios.VerticalScrollbarHighlightOnWheel = false;
             this.pnmisCuestionarios.VerticalScrollbarSize = 10;
             // 
+            // pnMain
+            // 
+            this.pnMain.BackColor = System.Drawing.Color.Transparent;
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.Location = new System.Drawing.Point(0, 0);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(729, 432);
+            this.pnMain.TabIndex = 2;
+            // 
             // ucMiscuestionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -47,6 +59,7 @@
             this.Controls.Add(this.pnmisCuestionarios);
             this.Name = "ucMiscuestionarios";
             this.Size = new System.Drawing.Size(729, 432);
+            this.pnmisCuestionarios.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -54,5 +67,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel pnmisCuestionarios;
+        private System.Windows.Forms.Panel pnMain;
     }
 }

@@ -45,9 +45,9 @@ namespace Data {
                                             "JOIN dbo.Persona b ON b.IDTipoPersona = a.IDTipoPersona " +
                                             "JOIN dbo.Usuario c ON c.IDPersona = b.IDPersona " +
                                             "JOIN dbo.PersonaNacional d ON d.IDPersonaNacional = b.IDPersona " +
-                                            "WHERE c.NombreUsuario = 'MarioTC09' AND b.Activo = 1 ");
+                                            "WHERE c.NombreUsuario = @NombreUsuario AND b.Activo = 1 ");
 
-            oSQLC.Parameters.AddWithValue("MarioTC09", Username);
+            oSQLC.Parameters.AddWithValue("@NombreUsuario", Username);
             SqlDataReader oSQLDR = new clsConnection().SelectUniqueData(oSQLC);
             if (oSQLDR != null) {
                 Usuario oUser = new Usuario() {

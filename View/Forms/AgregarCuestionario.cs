@@ -19,6 +19,11 @@ namespace View.Forms {
         public AgregarCuestionario() {
             InitializeComponent();
             ListPreguntas = new List<Model.Pregunta>();
+            pnAgregarCuestionario.AutoScroll = false;
+            pnAgregarCuestionario.HorizontalScroll.Enabled = false;
+            pnAgregarCuestionario.HorizontalScroll.Visible = false;
+            pnAgregarCuestionario.HorizontalScroll.Maximum = 0;
+            pnAgregarCuestionario.AutoScroll = true;
         }
 
         private void btnRespuestaUnica_Click(object sender, EventArgs e) {
@@ -43,12 +48,12 @@ namespace View.Forms {
             if( oForm.ShowDialog() == DialogResult.OK ) {
                 Model.Pregunta oPregunta = new Model.Pregunta() {
                     DescripcionPregunta = oForm.DescripcionPregunta,
+                    IDTipoPregunta = 1
                 };
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion1 });
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion2 });
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion3 });
                 oPregunta.Opciones.Add(new Model.Opciones() { DescripcionOpcion = oForm.Opcion4 });
-                oPregunta.IDTipoPregunta = 1;
                 ListPreguntas.Add(oPregunta);
                 this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario, this).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
             }
@@ -59,9 +64,10 @@ namespace View.Forms {
             if( oForm.ShowDialog() == DialogResult.OK ) {
                 Model.Pregunta oPregunta = new Model.Pregunta() {
                     DescripcionPregunta = oForm.DescripcionPregunta,
+                    IDTipoPregunta = 3,
                 };
                 ListPreguntas.Add(oPregunta);
-                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario, this).getPanel("Respuesta Multiple", oForm.DescripcionPregunta));
+                this.pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarPregunta(oPregunta, this.pnAgregarCuestionario, this).getPanel("Respuesta Verdadero/Falso", oForm.DescripcionPregunta));
 
             }
         }

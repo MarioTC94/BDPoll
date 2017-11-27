@@ -14,11 +14,8 @@ namespace Data {
         public clsConnection() {
 
             SqlConnectionStringBuilder SQLSB = new SqlConnectionStringBuilder();
-            SQLSB.DataSource = "ZERO-PC\\SQL2016";
-            SQLSB.InitialCatalog = "DBPoll";
-            SQLSB.IntegratedSecurity = true;
 
-            oCN = new SqlConnection(SQLSB.ConnectionString);
+            oCN = new SqlConnection("Data Source=ZERO-PC\\SQL2016;Initial Catalog=DBPoll;Integrated Security=True");
 
         }
 
@@ -126,9 +123,24 @@ namespace Data {
                     }
                 }
                 CloseConnection();
-                return null;
+                return OSQLR;
             }
             catch( Exception ex ) {
+                throw new Exception("No se pudo recuperar la información deseada", ex);
+            }
+        }
+
+        internal SqlDataReader SelectUniqueDataWithOpen(SqlCommand oSQLC) {
+            try {
+                SqlDataReader OSQLR = null;
+                if (oCN.State == ConnectionState.Open) {
+                    OSQLR = oSQLC.ExecuteReader();
+                    if (OSQLR.Read()) {
+                        return OSQLR;
+                    }
+                }
+                return OSQLR;
+            } catch (Exception ex) {
                 throw new Exception("No se pudo recuperar la información deseada", ex);
             }
         }

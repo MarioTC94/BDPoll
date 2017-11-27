@@ -16,6 +16,11 @@ namespace View.UserControl {
         public ucAgregarCuestionario() {
             InitializeComponent();
             ListaCuestionarios = new List<Model.Cuestionario>();
+            pnAgregarCuestionario.AutoScroll = false;
+            pnAgregarCuestionario.HorizontalScroll.Enabled = false;
+            pnAgregarCuestionario.HorizontalScroll.Visible = false;
+            pnAgregarCuestionario.HorizontalScroll.Maximum = 0;
+            pnAgregarCuestionario.AutoScroll = true;
         }
 
         private void btagregarcuestionario_Click(object sender, EventArgs e) {
@@ -30,6 +35,7 @@ namespace View.UserControl {
                     oCuestionario.Titulo = oForm.Titulo;
                     oCuestionario.FechaFinal = oForm.FechaFinal;
                     oCuestionario.FechaInicio = DateTime.Now;
+                    oCuestionario.Descripcion = oForm.Descripcion;
                     ListaCuestionarios.Add(oCuestionario);
                     pnAgregarCuestionario.Controls.Add(new Helpers.PanelAgregarCuestionario(oCuestionario, pnAgregarCuestionario, this).getPanel(oForm.Titulo, Convert.ToString(oPreguntas.Count), Convert.ToString(oPreguntas.Count * 2))); 
                 }
